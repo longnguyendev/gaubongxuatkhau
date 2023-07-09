@@ -59,7 +59,7 @@ export default function BannerMid() {
           sx={{
             backgroundImage: "url(/back-school-kids.jpg)",
             width: "100%",
-            height: "300px  ",
+            height: { xs: "300px", md: "600px" },
             backgroundSize: "cover",
             backgroundPosition: "center  center",
           }}
