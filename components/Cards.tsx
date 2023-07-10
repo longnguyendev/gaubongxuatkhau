@@ -9,7 +9,7 @@ export interface CardsProps {
 export default function Cards({ products }: CardsProps) {
   return (
     <>
-      <Box marginBottom={"200px"}>
+      <Box marginBottom={"100px"}>
         <Container maxWidth="xl" style={{ textAlign: "center" }}>
           <Box marginTop={"200px"}>
             <Typography
@@ -42,7 +42,7 @@ export default function Cards({ products }: CardsProps) {
           <Button
             variant="dashed"
             color="secondary"
-            sx={{ padding: "10px 20px" }}
+            sx={{ padding: "14px 20px" }}
           >
             Shop all product
           </Button>
