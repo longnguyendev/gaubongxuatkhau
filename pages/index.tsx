@@ -8,6 +8,7 @@ import BannerMid from "@/components/BannerMid";
 import Blogs from "@/components/Blogs";
 import Footer from "@/components/Footer";
 import { BlogProps } from "@/components/Blog";
+import { Container } from "@mui/material";
 
 const products: CardProps[] = [
   { id: 1, name: "Gấu Chó", image: "baby-prod21-1-390x439.jpg", price: 200000 },
@@ -40,14 +41,16 @@ const blogs: BlogProps[] = [
 
 export default function Home() {
   return (
-    <Box sx={{ minHeight: "100vh" }}>
-      <Header />
+    <>
       <Banner />
-      <Collection />
-      <Cards products={products} />
+      <Container maxWidth="xl">
+        <Collection />
+        <Cards products={products} />
+      </Container>
       <BannerMid />
-      <Blogs blogs={blogs} />
-      <Footer />
-    </Box>
+      <Container maxWidth="xl">
+        <Blogs blogs={blogs} />
+      </Container>
+    </>
   );
 }
