@@ -18,7 +18,7 @@ export default function Footer(props: IAppProps) {
       <Box sx={{ background: "#88cada ", padding: "50px 0" }}>
         <Container maxWidth={"xl"}>
           <Grid container spacing={0}>
-            <Grid item xs={6} sx={{ textAlign: "center" }}>
+            <Grid item xs={12} sm={6} sx={{ textAlign: "center" }}>
               <Typography fontSize={"24px"} color={"#fff"} fontWeight={500}>
                 Subscribe to our Newsletter
               </Typography>
@@ -26,7 +26,7 @@ export default function Footer(props: IAppProps) {
                 Be the first to know about new products, sales and promotions.
               </Typography>
             </Grid>
-            <Grid item xs={6} sx={{ textAlign: "center" }}>
+            <Grid item xs={12} sm={6} sx={{ textAlign: "center" }}>
               <Box sx={{ position: "relative" }}>
                 <input
                   placeholder="Your email"

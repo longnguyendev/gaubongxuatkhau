@@ -11,10 +11,13 @@ import {
 } from "@mui/material";
 import * as React from "react";
 import ProductCard from "./Card";
+import Blog, { BlogProps } from "./Blog";
 
-export interface IAppProps {}
+export interface BlogsProps {
+  blogs: BlogProps[];
+}
 
-export default function Blogs() {
+export default function Blogs({ blogs }: BlogsProps) {
   return (
     <Box marginBottom={"200px"}>
       <Container maxWidth="xl" style={{ textAlign: "center" }}>
@@ -34,103 +37,16 @@ export default function Blogs() {
           </Typography>
         </Box>
         <Grid container spacing={4} marginTop={"50px"} marginBottom={"50px"}>
-          <Grid item xs={12} md={4}>
-            <Card>
-              <CardActionArea>
-                <Box position={"relative"}>
-                  <CardMedia
-                    component="img"
-                    width="100%"
-                    image="/bs-blog-1-640x640.jpg"
-                    alt="green iguana"
-                  />
-                  <Box
-                    position={"absolute"}
-                    sx={{ inset: "10px", border: "2px dashed #fff" }}
-                  ></Box>
-                </Box>
-                <CardContent>
-                  <Typography
-                    gutterBottom
-                    variant="h5"
-                    component="div"
-                    textAlign={"left"}
-                    fontWeight={700}
-                    fontSize={"27px"}
-                    color={"#545454"}
-                  >
-                    Why February Babies Are Extra Special
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Card>
-              <CardActionArea>
-                <Box position={"relative"}>
-                  <CardMedia
-                    component="img"
-                    width="100%"
-                    image="/bs-blog-2-640x640.jpg"
-                    alt="green iguana"
-                  />
-                  <Box
-                    position={"absolute"}
-                    sx={{ inset: "10px", border: "2px dashed #fff" }}
-                  ></Box>
-                </Box>
-                <CardContent>
-                  <Typography
-                    gutterBottom
-                    variant="h5"
-                    component="div"
-                    textAlign={"left"}
-                    fontWeight={700}
-                    fontSize={"27px"}
-                    color={"#545454"}
-                  >
-                    The Surprising Way Motherhood Changed Me
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Card>
-              <CardActionArea>
-                <Box position={"relative"}>
-                  <CardMedia
-                    component="img"
-                    width="100%"
-                    image="/bs-blog-3-640x640.jpg"
-                    alt="green iguana"
-                  />
-                  <Box
-                    position={"absolute"}
-                    sx={{ inset: "10px", border: "2px dashed #fff" }}
-                  ></Box>
-                </Box>
-                <CardContent>
-                  <Typography
-                    gutterBottom
-                    variant="h5"
-                    component="div"
-                    textAlign={"left"}
-                    fontWeight={700}
-                    fontSize={"27px"}
-                    color={"#545454"}
-                  >
-                    How Aromatherapy Can Impact NICU Babies
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </Grid>
+          {blogs &&
+            blogs.map((blog: BlogProps) => (
+              <Blog
+                key={blog.id}
+                id={blog.id}
+                title={blog.title}
+                image={blog.image}
+              />
+            ))}
         </Grid>
-        <Button variant="dashed" color="secondary" sx={{ padding: "10px" }}>
-          Shop all product
-        </Button>
       </Container>
     </Box>
   );

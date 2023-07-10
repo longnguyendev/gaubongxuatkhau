@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 
 export interface CardProps {
+  id: number;
   name: string;
   image: string;
   price: number;
