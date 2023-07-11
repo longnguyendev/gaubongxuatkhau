@@ -30,7 +30,7 @@ export default function Detail() {
               alt="green iguana"
             />
           </Grid>
-          <Grid item xs={12} md={6} paddingX={"80px"}>
+          <Grid item xs={12} md={6} sx={{ padding: { sx: "0", md: "80px" } }}>
             <Typography fontSize={"40px"} color={"#333"} fontWeight={700}>
               Stuffed Blue Shark
             </Typography>
