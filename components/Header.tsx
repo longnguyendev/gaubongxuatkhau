@@ -37,7 +37,6 @@ export default function Header(props: Props) {
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
-
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ py: 2.5, background: "#ff8087" }}>
@@ -126,7 +125,6 @@ export default function Header(props: Props) {
           >
             <Image src={"/logo-200.png"} alt="logo" width={150} height={50} />
           </Box>
-
           <Box
             sx={{
               flexGrow: 1,
