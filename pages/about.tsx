@@ -168,7 +168,10 @@ export default function About() {
                   and as we move into the future, we are proud to help families
                   like yours with innovative products.
                 </Typography>
-                <Button variant="dashed" sx={{ padding: "14px 20px" }}>
+                <Button
+                  variant="dashed"
+                  sx={{ padding: "14px 20px", fontWeight: 700 }}
+                >
                   Shop Now
                 </Button>
               </Box>
