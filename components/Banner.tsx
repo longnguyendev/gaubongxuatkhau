@@ -4,7 +4,6 @@ import * as React from "react";
 export default function Banner() {
   return (
     <>
-      <Box height={{ xs: "70px", sm: "100px" }} />
       <Box
         sx={{
           overflow: "hidden",

@@ -17,7 +17,7 @@ const products: CardProps[] = [
   { id: 4, name: "Gấu heo", image: "baby-prod23-1-390x439.jpg", price: 200000 },
   { id: 5, name: "Gấu heo", image: "baby-prod20-1-390x439.jpg", price: 200000 },
   { id: 6, name: "Gấu heo", image: "baby-prod19-1-390x439.jpg", price: 200000 },
-  { id: 7, name: "Gấu heo", image: "baby-prod21-1-390x439.jpg", price: 200000 },
+  { id: 7, name: "Gấu heo", image: "baby-prod8-4-390x439.jpg", price: 200000 },
   { id: 7, name: "Gấu heo", image: "baby-prod24-1-390x439.jpg", price: 200000 },
 ];
 

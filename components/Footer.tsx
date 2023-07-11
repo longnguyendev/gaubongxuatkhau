@@ -1,25 +1,23 @@
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  Input,
-  TextField,
-  Typography,
-} from "@mui/material";
-import Image from "next/image";
-import * as React from "react";
+import { Box, Button, Container, Grid, Typography } from "@mui/material";
 
 export interface IAppProps {}
 
 export default function Footer(props: IAppProps) {
   return (
-    <Box>
-      <Box sx={{ background: "#88cada ", padding: "50px 0" }}>
+    <Box
+      sx={{
+        height: "900px",
+        width: "100%",
+        backgroundImage: "url(/scene.jpg)",
+        backgroundSize: "cover",
+        backgroundPosition: "bottom center",
+      }}
+    >
+      <Box sx={{ background: "#88cada ", padding: "45px 0" }}>
         <Container maxWidth={"xl"}>
           <Grid container spacing={0}>
-            <Grid item xs={12} sm={6} sx={{ textAlign: "center" }}>
-              <Typography fontSize={"24px"} color={"#fff"} fontWeight={500}>
+            <Grid item xs={12} sm={6}>
+              <Typography fontSize={"24px"} color={"#fff"} fontWeight={700}>
                 Subscribe to our Newsletter
               </Typography>
               <Typography color={"#fff"} fontSize={"14px"}>
@@ -58,7 +56,7 @@ export default function Footer(props: IAppProps) {
           </Grid>
         </Container>
       </Box>
-      <Box
+      {/* <Box
         component="img"
         sx={{
           height: "auto",
@@ -66,7 +64,7 @@ export default function Footer(props: IAppProps) {
         }}
         alt="The house from the offer."
         src="/scene.jpg"
-      />
+      /> */}
     </Box>
   );
 }
