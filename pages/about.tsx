@@ -145,7 +145,7 @@ export default function About() {
 
       <Container maxWidth="xl">
         <Box padding={"100px 0"}>
-          <Grid container spacing={{ xs: 0, md: 8 }}>
+          <Grid container spacing={{ xs: 4, md: 8 }}>
             <Grid item xs={12} md={6} display={"flex"} alignItems={"center"}>
               <Box>
                 <Typography fontSize={"30px"} fontWeight={700} color={"#333"}>

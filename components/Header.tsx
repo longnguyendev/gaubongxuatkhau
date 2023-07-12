@@ -18,6 +18,7 @@ import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import Icon from "@mui/material/Icon";
+import { Link } from "@mui/material";
 
 interface Props {
   /**
@@ -28,6 +29,7 @@ interface Props {
 }
 
 const drawerWidth = 240;
+
 const navItems = ["Home", "About", "Shop", "Contact"];
 
 export default function Header(props: Props) {
@@ -132,17 +134,18 @@ export default function Header(props: Props) {
             }}
           >
             {navItems.map((item) => (
-              <Button
-                key={item}
-                sx={{
-                  color: "#183a5c",
-                  fontSize: "16px",
-                  fontWeight: "700",
-                  paddingX: "15px",
-                }}
-              >
-                {item}
-              </Button>
+              <Link key={item} href={item == "Home" ? "/" : item.toLowerCase()}>
+                <Button
+                  sx={{
+                    color: "#183a5c",
+                    fontSize: "16px",
+                    fontWeight: "700",
+                    paddingX: "15px",
+                  }}
+                >
+                  {item}
+                </Button>
+              </Link>
             ))}
           </Box>
           <Box
