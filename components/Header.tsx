@@ -19,6 +19,7 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import Icon from "@mui/material/Icon";
 import { Link } from "@mui/material";
+import { useRouter } from "next/router";
 
 interface Props {
   /**
@@ -30,7 +31,7 @@ interface Props {
 
 const drawerWidth = 240;
 
-const navItems = ["Home", "About", "Shop", "Contact"];
+const navItems = ["Home", "About", "Shop", "Blog", "Contact"];
 
 export default function Header(props: Props) {
   const { window } = props;
@@ -39,6 +40,16 @@ export default function Header(props: Props) {
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
+
+  const router = useRouter();
+  const handleClick = (url: string) => {
+    if (url == "home") {
+      router.push("/");
+    } else {
+      router.push(url);
+    }
+  };
+
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ py: 2.5, background: "#ff8087" }}>
@@ -63,7 +74,12 @@ export default function Header(props: Props) {
         </Button>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemButton
+              sx={{ textAlign: "center" }}
+              onClick={() => {
+                handleClick(item.toLocaleLowerCase());
+              }}
+            >
               <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
@@ -74,7 +90,6 @@ export default function Header(props: Props) {
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
-
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -134,18 +149,18 @@ export default function Header(props: Props) {
             }}
           >
             {navItems.map((item) => (
-              <Link key={item} href={item == "Home" ? "/" : item.toLowerCase()}>
-                <Button
-                  sx={{
-                    color: "#183a5c",
-                    fontSize: "16px",
-                    fontWeight: "700",
-                    paddingX: "15px",
-                  }}
-                >
-                  {item}
-                </Button>
-              </Link>
+              <Button
+                key={item}
+                sx={{
+                  color: "#183a5c",
+                  fontSize: "16px",
+                  fontWeight: "700",
+                  paddingX: "15px",
+                }}
+                onClick={() => handleClick(item.toLocaleLowerCase())}
+              >
+                {item}
+              </Button>
             ))}
           </Box>
           <Box

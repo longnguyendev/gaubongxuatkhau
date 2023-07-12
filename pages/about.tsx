@@ -1,3 +1,4 @@
+import TitlePage from "@/components/TitlePage";
 import {
   Box,
   Button,
@@ -40,18 +41,7 @@ const abouts: AboutProps[] = [
 export default function About() {
   return (
     <>
-      <Box
-        padding={"80px 0"}
-        textAlign={"center"}
-        sx={{
-          backgroundImage: "url(babystreet-title-background.jpg)",
-          backgroundSize: "cover",
-        }}
-      >
-        <Typography fontSize={"47px"} color={"#183a5c"} fontWeight={700}>
-          About Us
-        </Typography>
-      </Box>
+      <TitlePage>About Us</TitlePage>
       <Container maxWidth="xl">
         <Box padding={"100px 0"}>
           <Grid container spacing={{ xs: 0, md: 8 }}>
