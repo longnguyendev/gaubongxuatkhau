@@ -15,7 +15,7 @@ export interface BlogProps {
   image: string;
 }
 
-export default function Blog({ title, image }: BlogProps) {
+export default function BlogCard({ title, image }: BlogProps) {
   return (
     <>
       <Grid item xs={12} md={4}>

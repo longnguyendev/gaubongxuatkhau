@@ -5,14 +5,14 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea, Link } from "@mui/material";
 
-export interface CardProps {
+export interface ProductCardProps {
   id: number;
   name: string;
   image: string;
   price: number;
 }
 
-export default function ProductCard({ name, image, price }: CardProps) {
+export default function ProductCard({ name, image, price }: ProductCardProps) {
   return (
     <Card sx={{ maxWidth: "100%" }}>
       <Link href={"/detail"} sx={{ textDecoration: "none" }}>

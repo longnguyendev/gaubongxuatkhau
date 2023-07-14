@@ -8,7 +8,6 @@ import {
   List,
   ListItem,
   ListItemButton,
-  ListItemIcon,
   ListItemText,
 } from "@mui/material";
 import * as React from "react";
@@ -122,8 +121,9 @@ export default function App() {
                     <ListItemButton>
                       <Box
                         position={"relative"}
-                        minWidth={"58px"}
-                        minHeight={"58px"}
+                        width={"58px"}
+                        height={"58px"}
+                        flexShrink={0}
                         borderRadius={"50%"}
                         marginRight={"20px"}
                         sx={{

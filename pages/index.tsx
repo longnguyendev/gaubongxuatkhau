@@ -1,16 +1,14 @@
 import Banner from "@/components/Banner";
-import Header from "@/components/Header";
-import Box from "@mui/joy/Box";
-import Collection from "@/components/Colection";
-import { CardProps } from "@/components/Card";
-import Cards from "@/components/Cards";
 import BannerMid from "@/components/BannerMid";
-import Blogs from "@/components/Blogs";
-import Footer from "@/components/Footer";
-import { BlogProps } from "@/components/Blog";
+import { BlogProps } from "@/components/BlogCard";
 import { Container } from "@mui/material";
+import { ColectionCardProps } from "@/components/ColectionCard";
+import { ProductCardProps } from "@/components/ProductCard";
+import ColectionList from "@/components/ColectionList";
+import BlogList from "@/components/BlogList";
+import ProductList from "@/components/ProductList";
 
-const products: CardProps[] = [
+const products: ProductCardProps[] = [
   { id: 1, name: "Gấu Chó", image: "baby-prod21-1-390x439.jpg", price: 200000 },
   { id: 2, name: "Gấu mèo", image: "baby-prod22-1-390x439.jpg", price: 200000 },
   { id: 3, name: "Gấu heo", image: "baby-prod17-2-390x439.jpg", price: 200000 },
@@ -19,6 +17,30 @@ const products: CardProps[] = [
   { id: 6, name: "Gấu heo", image: "baby-prod19-1-390x439.jpg", price: 200000 },
   { id: 7, name: "Gấu heo", image: "baby-prod8-4-390x439.jpg", price: 200000 },
   { id: 7, name: "Gấu heo", image: "baby-prod24-1-390x439.jpg", price: 200000 },
+];
+
+const Collections: ColectionCardProps[] = [
+  {
+    id: 1,
+    title: "Girls",
+    type: "Clothing",
+    image: "banner-girls-home.jpg",
+    description: "Wolrd's Best Brand",
+  },
+  {
+    id: 2,
+    title: "Boys",
+    type: "Clothing",
+    image: "banner-boys-home.jpg",
+    description: "Increddible Quality",
+  },
+  {
+    id: 3,
+    title: "Girls",
+    type: "&Game",
+    image: "banner-toys-home.jpg",
+    description: "For all ages",
+  },
 ];
 
 const blogs: BlogProps[] = [
@@ -44,12 +66,12 @@ export default function Home() {
     <>
       <Banner />
       <Container maxWidth="xl">
-        <Collection />
-        <Cards products={products} />
+        <ColectionList colections={Collections} />
+        <ProductList products={products} />
       </Container>
       <BannerMid />
       <Container maxWidth="xl">
-        <Blogs blogs={blogs} />
+        <BlogList blogs={blogs} />
       </Container>
     </>
   );

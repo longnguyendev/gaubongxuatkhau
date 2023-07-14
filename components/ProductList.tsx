@@ -1,12 +1,12 @@
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import * as React from "react";
-import ProductCard, { CardProps } from "./Card";
+import ProductCard, { ProductCardProps } from "./ProductCard";
 
 export interface CardsProps {
-  products: CardProps[];
+  products: ProductCardProps[];
 }
 
-export default function Cards({ products }: CardsProps) {
+export default function ProductList({ products }: CardsProps) {
   return (
     <>
       <Box marginBottom={"100px"} style={{ textAlign: "center" }}>
@@ -26,17 +26,11 @@ export default function Cards({ products }: CardsProps) {
           </Typography>
         </Box>
         <Grid container spacing={4} marginTop={"50px"} marginBottom={"100px"}>
-          {products &&
-            products.map((product: CardProps) => (
-              <Grid key={product.id} item xs={12} sm={6} md={3}>
-                <ProductCard
-                  id={product.id}
-                  name={product.name}
-                  image={product.image}
-                  price={product.price}
-                />
-              </Grid>
-            ))}
+          {products.map((product) => (
+            <Grid key={product.id} item xs={12} sm={6} md={3}>
+              <ProductCard {...product} />
+            </Grid>
+          ))}
         </Grid>
         <Button
           variant="dashed"

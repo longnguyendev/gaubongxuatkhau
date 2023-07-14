@@ -1,23 +1,12 @@
-import {
-  Box,
-  Button,
-  Card,
-  CardActionArea,
-  CardContent,
-  CardMedia,
-  Container,
-  Grid,
-  Typography,
-} from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import * as React from "react";
-import ProductCard from "./Card";
-import Blog, { BlogProps } from "./Blog";
+import Blog, { BlogProps } from "./BlogCard";
 
 export interface BlogsProps {
   blogs: BlogProps[];
 }
 
-export default function Blogs({ blogs }: BlogsProps) {
+export default function BlogList({ blogs }: BlogsProps) {
   return (
     <Box marginBottom={"200px"} style={{ textAlign: "center" }}>
       <Box marginTop={"200px"}>
@@ -36,15 +25,9 @@ export default function Blogs({ blogs }: BlogsProps) {
         </Typography>
       </Box>
       <Grid container spacing={4} marginTop={"50px"} marginBottom={"50px"}>
-        {blogs &&
-          blogs.map((blog: BlogProps) => (
-            <Blog
-              key={blog.id}
-              id={blog.id}
-              title={blog.title}
-              image={blog.image}
-            />
-          ))}
+        {blogs.map((blog) => (
+          <Blog key={blog.id} {...blog} />
+        ))}
       </Grid>
     </Box>
   );
