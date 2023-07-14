@@ -47,7 +47,7 @@ export default function BannerMid() {
             </Typography>
             <Button
               variant="dashed"
-              sx={{ padding: "14px 20px", marginTop: "50px" }}
+              sx={{ padding: "14px 20px", marginTop: "50px", fontWeight: 700 }}
             >
               Shop Collection
             </Button>

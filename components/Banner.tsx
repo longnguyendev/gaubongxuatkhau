@@ -33,7 +33,7 @@ export default function Banner() {
             position={"relative"}
             textAlign={"center"}
           >
-            Connect Heart
+            Connecting Heart
           </Typography>
           <Typography
             sx={{
