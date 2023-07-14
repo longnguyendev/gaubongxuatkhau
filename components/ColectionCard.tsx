@@ -43,9 +43,8 @@ export default function ColectionCard({
           />
           <Box
             position={"absolute"}
-            sx={{ top: "50%", bottom: "5%", left: "7%", right: "7%" }}
+            sx={{ bottom: "5%", left: "7%", right: "7%" }}
           >
-            {" "}
             <Typography variant="h2" fontFamily={"Hensa"} color={"#fff"}>
               {title}
             </Typography>
