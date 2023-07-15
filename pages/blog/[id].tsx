@@ -1,8 +1,8 @@
 import TitlePage from "@/components/TitlePage";
 import { useRouter } from "next/router";
 import * as React from "react";
-import { blogs } from "./constants";
 import { Box, Container, Typography } from "@mui/material";
+import { blogs } from "../../store/constants";
 
 export interface IAppProps {}
 

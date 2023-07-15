@@ -13,7 +13,7 @@ import {
   ListItemText,
 } from "@mui/material";
 import * as React from "react";
-import { blogs, categories, popularPosts } from "./constants";
+import { blogs, categories, popularPosts } from "../../store/constants";
 
 export default function Blog() {
   const route = useRouter();
