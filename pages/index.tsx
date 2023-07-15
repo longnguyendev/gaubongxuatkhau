@@ -7,6 +7,7 @@ import { ProductCardProps } from "@/components/ProductCard";
 import ColectionList from "@/components/ColectionList";
 import BlogList from "@/components/BlogList";
 import ProductList from "@/components/ProductList";
+import { useRouter } from "next/router";
 
 const products: ProductCardProps[] = [
   { id: 1, name: "Gấu Chó", image: "baby-prod21-1-390x439.jpg", price: 200000 },
@@ -62,6 +63,10 @@ const blogs: BlogProps[] = [
 ];
 
 export default function Home() {
+  const route = useRouter();
+  const handleClick = (id: string) => {
+    route.push(`/blog/${id}`);
+  };
   return (
     <>
       <BannerTop />

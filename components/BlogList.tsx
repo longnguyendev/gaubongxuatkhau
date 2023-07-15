@@ -1,12 +1,17 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Link, Typography } from "@mui/material";
 import * as React from "react";
 import Blog, { BlogProps } from "./BlogCard";
+import { useRouter } from "next/router";
 
 export interface BlogsProps {
   blogs: BlogProps[];
 }
 
 export default function BlogList({ blogs }: BlogsProps) {
+  const route = useRouter();
+  const handleClick = (id: string) => {
+    route.push(`/blog/${id}`);
+  };
   return (
     <Box marginBottom={"200px"} style={{ textAlign: "center" }}>
       <Box marginTop={"200px"}>
@@ -26,7 +31,16 @@ export default function BlogList({ blogs }: BlogsProps) {
       </Box>
       <Grid container spacing={4} marginTop={"50px"} marginBottom={"50px"}>
         {blogs.map((blog) => (
-          <Blog key={blog.id} {...blog} />
+          <Grid key={blog.id} item xs={12} md={4}>
+            <Link
+              sx={{ textDecoration: "none" }}
+              onClick={() => {
+                handleClick(String(blog.id));
+              }}
+            >
+              <Blog {...blog} />
+            </Link>
+          </Grid>
         ))}
       </Grid>
     </Box>
