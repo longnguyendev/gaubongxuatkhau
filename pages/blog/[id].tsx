@@ -15,7 +15,7 @@ export default function App(props: IAppProps) {
       <TitlePage>{blog?.title}</TitlePage>
       <Container maxWidth="lg">
         <Box padding={"80px 0"}>
-          <Box component="img" src={`/${blog?.image}`} />
+          <Box component="img" src={`/${blog?.image}`} width={"100%"} />
           <Typography>{blog?.content}</Typography>
         </Box>
       </Container>
