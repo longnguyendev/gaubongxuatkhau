@@ -46,7 +46,7 @@ export default function Header(props: Props) {
     if (url == "home") {
       router.push("/");
     } else {
-      router.push(url);
+      router.push(`/${url}`);
     }
   };
 
