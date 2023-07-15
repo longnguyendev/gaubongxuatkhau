@@ -1,4 +1,4 @@
-import Banner from "@/components/Banner";
+import BannerTop from "@/components/BannerTop";
 import BannerMid from "@/components/BannerMid";
 import { BlogProps } from "@/components/BlogCard";
 import { Container } from "@mui/material";
@@ -64,13 +64,13 @@ const blogs: BlogProps[] = [
 export default function Home() {
   return (
     <>
-      <Banner />
-      <Container maxWidth="xl">
+      <BannerTop />
+      <Container maxWidth="lg">
         <ColectionList colections={Collections} />
         <ProductList products={products} />
       </Container>
       <BannerMid />
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <BlogList blogs={blogs} />
       </Container>
     </>

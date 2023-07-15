@@ -42,7 +42,7 @@ export default function About() {
   return (
     <>
       <TitlePage>About Us</TitlePage>
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <Box padding={"100px 0"}>
           <Grid container spacing={{ xs: 0, md: 8 }}>
             <Grid item xs={12} md={6}>
@@ -77,63 +77,62 @@ export default function About() {
         </Box>
       </Container>
       <Box padding={"100px 0"} sx={{ background: "#ebf7fa " }}>
-        <Container maxWidth="xl">
+        <Container maxWidth="lg">
           <Grid container spacing={4}>
-            {abouts &&
-              abouts.map((about, index) => (
-                <Grid key={index} item xs={12} sm={4}>
-                  <Card
+            {abouts.map((about, index) => (
+              <Grid key={index} item xs={12} sm={4}>
+                <Card
+                  sx={{
+                    transition: ".3s linear",
+                    ":hover": {
+                      transform: "translateY(-5px)",
+                      boxShadow: "0 0px 40px 0 rgba(0, 0, 0, 0.15)",
+                    },
+                  }}
+                >
+                  <CardActionArea
                     sx={{
-                      transition: ".3s linear",
-                      ":hover": {
-                        transform: "translateY(-5px)",
-                        boxShadow: "0 0px 40px 0 rgba(0, 0, 0, 0.15)",
+                      position: "relative",
+                      textAlign: "center",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      padding: "50px 20px",
+                      ":before": {
+                        position: "absolute",
+                        content: '""',
+                        inset: "10px",
+                        border: "2px dashed #000000",
+                        opacity: 0.1,
                       },
                     }}
                   >
-                    <CardActionArea
-                      sx={{
-                        position: "relative",
-                        textAlign: "center",
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        padding: "50px 20px",
-                        ":before": {
-                          position: "absolute",
-                          content: '""',
-                          inset: "10px",
-                          border: "2px dashed #000000",
-                          opacity: 0.1,
-                        },
-                      }}
-                    >
-                      <Box
-                        component="img"
-                        height="54px"
-                        width="54px"
-                        sx={{ borderRadius: "50%" }}
-                        src={about.image}
-                        alt="green iguana"
-                      />
-                      <CardContent>
-                        <Typography gutterBottom fontSize={"18px"}>
-                          {about.title}
-                        </Typography>
-                        <Typography color="text.secondary" fontSize={"18px"}>
-                          {about.description}
-                        </Typography>
-                      </CardContent>
-                    </CardActionArea>
-                  </Card>
-                </Grid>
-              ))}
+                    <Box
+                      component="img"
+                      height="54px"
+                      width="54px"
+                      sx={{ borderRadius: "50%" }}
+                      src={about.image}
+                      alt={about.image}
+                    />
+                    <CardContent>
+                      <Typography gutterBottom fontSize={"18px"}>
+                        {about.title}
+                      </Typography>
+                      <Typography color="text.secondary" fontSize={"18px"}>
+                        {about.description}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </Grid>
+            ))}
           </Grid>
         </Container>
       </Box>
 
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <Box padding={"100px 0"}>
           <Grid container spacing={{ xs: 4, md: 8 }}>
             <Grid item xs={12} md={6} display={"flex"} alignItems={"center"}>

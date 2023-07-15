@@ -26,8 +26,8 @@ export default function Detail() {
             <CardMedia
               component="img"
               width="100%"
-              image={"/baby-prod21-1.jpg"}
-              alt="green iguana"
+              image={"baby-prod21-1.jpg"}
+              alt="baby-prod21-1.jpg"
             />
           </Grid>
           <Grid

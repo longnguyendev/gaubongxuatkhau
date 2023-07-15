@@ -56,15 +56,6 @@ export default function Footer(props: IAppProps) {
           </Grid>
         </Container>
       </Box>
-      {/* <Box
-        component="img"
-        sx={{
-          height: "auto",
-          width: "100%",
-        }}
-        alt="The house from the offer."
-        src="/scene.jpg"
-      /> */}
     </Box>
   );
 }

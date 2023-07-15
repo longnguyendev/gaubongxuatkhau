@@ -8,7 +8,7 @@ export default function Layout({ children }: PropsWithChildren) {
     <Box sx={{ minHeight: "100vh" }}>
       <Header />
       <Box height={{ xs: "70px", sm: "100px" }} />
-      <Box>{children}</Box>
+      {children}
       <Footer />
     </Box>
   );
