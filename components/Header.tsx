@@ -20,6 +20,7 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import Icon from "@mui/material/Icon";
 import { Link } from "@mui/material";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 interface Props {
   /**
@@ -34,15 +35,17 @@ const drawerWidth = 240;
 const navItems = ["Home", "About", "Shop", "Blog", "Contact"];
 
 export default function Header(props: Props) {
+  const [pageState, setPageState] = useState(0);
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
 
   const router = useRouter();
-  const handleClick = (url: string) => {
+  const handleClick = (url: string, index: number) => {
+    setPageState(index);
     if (url == "home") {
       router.push("/");
     } else {
@@ -72,12 +75,16 @@ export default function Header(props: Props) {
             <SearchOutlinedIcon />
           </Icon>
         </Button>
-        {navItems.map((item) => (
+        {navItems.map((item, index) => (
           <ListItem key={item} disablePadding>
             <ListItemButton
-              sx={{ textAlign: "center" }}
+              sx={
+                index === pageState
+                  ? { textAlign: "center", color: "#ff8087" }
+                  : { textAlign: "center" }
+              }
               onClick={() => {
-                handleClick(item.toLocaleLowerCase());
+                handleClick(item.toLocaleLowerCase(), index);
               }}
             >
               <ListItemText primary={item} />
@@ -148,16 +155,25 @@ export default function Header(props: Props) {
               display: { xs: "none", sm: "none", md: "block" },
             }}
           >
-            {navItems.map((item) => (
+            {navItems.map((item, index) => (
               <Button
                 key={item}
-                sx={{
-                  color: "#183a5c",
-                  fontSize: "16px",
-                  fontWeight: "700",
-                  paddingX: "15px",
-                }}
-                onClick={() => handleClick(item.toLocaleLowerCase())}
+                sx={
+                  index === pageState
+                    ? {
+                        color: "#ff8087",
+                        fontSize: "16px",
+                        fontWeight: "700",
+                        paddingX: "15px",
+                      }
+                    : {
+                        color: "#183a5c",
+                        fontSize: "16px",
+                        fontWeight: "700",
+                        paddingX: "15px",
+                      }
+                }
+                onClick={() => handleClick(item.toLocaleLowerCase(), index)}
               >
                 {item}
               </Button>
@@ -218,7 +234,7 @@ export default function Header(props: Props) {
             display: { xs: "block", md: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
-              width: 400,
+              width: drawerWidth,
             },
           }}
         >
