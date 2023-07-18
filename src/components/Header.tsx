@@ -1,4 +1,3 @@
-import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -17,10 +16,10 @@ import Image from "next/image";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import Icon from "@mui/material/Icon";
-import { Link } from "@mui/material";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import Link from "./Link";
+import { Stack } from "@mui/material";
 
 interface Props {
   /**
@@ -32,10 +31,15 @@ interface Props {
 
 const drawerWidth = 240;
 
-const navItems = ["Home", "About", "Shop", "Blog", "Contact"];
+const navItems = [
+  { label: "Home", value: "/" },
+  { label: "About", value: "/about" },
+  { label: "Shop", value: "/shop" },
+  { label: "Blog", value: "/blog" },
+  { label: "Contact", value: "/contact" },
+];
 
 export default function Header(props: Props) {
-  const [pageState, setPageState] = useState(0);
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -44,14 +48,9 @@ export default function Header(props: Props) {
   };
 
   const router = useRouter();
-  const handleClick = (url: string, index: number) => {
-    setPageState(index);
-    if (url == "home") {
-      router.push("/");
-    } else {
-      router.push(`/${url}`);
-    }
-  };
+
+  const getActive = (value: string) =>
+    value === "/" ? router.pathname === "/" : router.pathname.startsWith(value);
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
@@ -60,72 +59,45 @@ export default function Header(props: Props) {
       </Typography>
       <Divider />
       <List>
-        <Button>
-          <Icon sx={{ color: "#000", fontSize: "21px" }}>
-            <PersonOutlineOutlinedIcon />
-          </Icon>
-        </Button>
-        <Button>
-          <Icon sx={{ color: "#000", fontSize: "21px" }}>
-            <ShoppingCartOutlinedIcon />
-          </Icon>
-        </Button>
-        <Button>
-          <Icon sx={{ color: "#000", fontSize: "21px" }}>
-            <SearchOutlinedIcon />
-          </Icon>
-        </Button>
-        {navItems.map((item, index) => (
-          <ListItem key={item} disablePadding>
+        {navItems.map(({ label, value }) => (
+          <ListItem key={value} disablePadding>
             <ListItemButton
-              sx={
-                index === pageState
-                  ? { textAlign: "center", color: "#ff8087" }
-                  : { textAlign: "center" }
-              }
-              onClick={() => {
-                handleClick(item.toLocaleLowerCase(), index);
+              sx={{
+                textAlign: "center",
+                ...(getActive(value) && { color: "#ff8087" }),
               }}
+              LinkComponent={Link}
+              href={value}
             >
-              <ListItemText primary={item} />
+              <ListItemText primary={label} />
             </ListItemButton>
           </ListItem>
         ))}
+        <ListItem sx={{ justifyContent: "center" }}>
+          <Stack direction="row" spacing={1}>
+            <IconButton>
+              <PersonOutlineOutlinedIcon />
+            </IconButton>
+            <IconButton>
+              <ShoppingCartOutlinedIcon />
+            </IconButton>
+            <IconButton>
+              <SearchOutlinedIcon />
+            </IconButton>
+          </Stack>
+        </ListItem>
       </List>
     </Box>
   );
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
+
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar component="nav" sx={{ background: "#fff", paddingX: "30px" }}>
         <Toolbar sx={{ height: { xs: "70px", sm: "100px" } }}>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{
-              position: "relative",
-              mr: 2,
-              display: { md: "none" },
-              background: "#ff8087",
-              ":hover": { background: "#80d1e5" },
-            }}
-          >
-            <Box
-              sx={{
-                position: "absolute",
-                inset: "3px",
-                border: "2px dashed #000",
-                borderRadius: "50px",
-                opacity: 0.16,
-              }}
-            />
-            <MenuIcon />
-          </IconButton>
           <Box
             paddingX={"20px"}
             sx={{
@@ -146,36 +118,54 @@ export default function Header(props: Props) {
                 opacity: 0.16,
               },
             }}
+            component={Link}
+            href="/"
           >
-            <Image src={"/logo-200.png"} alt="logo" width={150} height={50} />
+            <Image src="/logo-200.png" alt="logo" width={150} height={50} />
           </Box>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{
+              position: "relative",
+              display: { md: "none" },
+              background: "#ff8087",
+              ":hover": { background: "#80d1e5" },
+              ml: "auto",
+            }}
+          >
+            <Box
+              sx={{
+                position: "absolute",
+                inset: "3px",
+                border: "2px dashed #000",
+                borderRadius: "50px",
+                opacity: 0.16,
+              }}
+            />
+            <MenuIcon />
+          </IconButton>
           <Box
             sx={{
               flexGrow: 1,
               display: { xs: "none", sm: "none", md: "block" },
             }}
           >
-            {navItems.map((item, index) => (
+            {navItems.map(({ label, value }) => (
               <Button
-                key={item}
-                sx={
-                  index === pageState
-                    ? {
-                        color: "#ff8087",
-                        fontSize: "16px",
-                        fontWeight: "700",
-                        paddingX: "15px",
-                      }
-                    : {
-                        color: "#183a5c",
-                        fontSize: "16px",
-                        fontWeight: "700",
-                        paddingX: "15px",
-                      }
-                }
-                onClick={() => handleClick(item.toLocaleLowerCase(), index)}
+                key={value}
+                sx={{
+                  fontSize: "16px",
+                  fontWeight: 700,
+                  paddingX: "15px",
+                  color: getActive(value) ? "#ff8087" : "#183a5c",
+                }}
+                LinkComponent={Link}
+                href={value}
               >
-                {item}
+                {label}
               </Button>
             ))}
           </Box>
@@ -223,6 +213,7 @@ export default function Header(props: Props) {
       </AppBar>
       <Box component="nav">
         <Drawer
+          anchor="right"
           container={container}
           variant="temporary"
           open={mobileOpen}

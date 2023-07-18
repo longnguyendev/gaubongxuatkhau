@@ -1,13 +1,12 @@
-import BannerTop from "@/components/BannerTop";
-import BannerMid from "@/components/BannerMid";
-import { BlogProps } from "@/components/BlogCard";
+import BannerTop from "@/src/components/BannerTop";
+import BannerMid from "@/src/components/BannerMid";
+import { BlogProps } from "@/src/components/BlogCard";
 import { Container } from "@mui/material";
-import { ColectionCardProps } from "@/components/ColectionCard";
-import { ProductCardProps } from "@/components/ProductCard";
-import ColectionList from "@/components/ColectionList";
-import BlogList from "@/components/BlogList";
-import ProductList from "@/components/ProductList";
-import { useRouter } from "next/router";
+import { ColectionCardProps } from "@/src/components/ColectionCard";
+import { ProductCardProps } from "@/src/components/ProductCard";
+import ColectionList from "@/src/components/ColectionList";
+import BlogList from "@/src/components/BlogList";
+import ProductList from "@/src/components/ProductList";
 
 const products: ProductCardProps[] = [
   { id: 1, name: "Gấu Chó", image: "baby-prod21-1-390x439.jpg", price: 200000 },
@@ -17,7 +16,7 @@ const products: ProductCardProps[] = [
   { id: 5, name: "Gấu heo", image: "baby-prod20-1-390x439.jpg", price: 200000 },
   { id: 6, name: "Gấu heo", image: "baby-prod19-1-390x439.jpg", price: 200000 },
   { id: 7, name: "Gấu heo", image: "baby-prod8-4-390x439.jpg", price: 200000 },
-  { id: 7, name: "Gấu heo", image: "baby-prod24-1-390x439.jpg", price: 200000 },
+  { id: 8, name: "Gấu heo", image: "baby-prod24-1-390x439.jpg", price: 200000 },
 ];
 
 const Collections: ColectionCardProps[] = [
@@ -63,10 +62,6 @@ const blogs: BlogProps[] = [
 ];
 
 export default function Home() {
-  const route = useRouter();
-  const handleClick = (id: string) => {
-    route.push(`/blog/${id}`);
-  };
   return (
     <>
       <BannerTop />

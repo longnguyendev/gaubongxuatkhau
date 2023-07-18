@@ -1,8 +1,13 @@
-import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  Grid,
+  InputBase,
+  Typography,
+} from "@mui/material";
 
-export interface IAppProps {}
-
-export default function Footer(props: IAppProps) {
+export default function Footer() {
   return (
     <Box
       sx={{
@@ -26,9 +31,9 @@ export default function Footer(props: IAppProps) {
             </Grid>
             <Grid item xs={12} sm={6} sx={{ textAlign: "center" }}>
               <Box sx={{ position: "relative" }}>
-                <input
+                <InputBase
                   placeholder="Your email"
-                  style={{
+                  sx={{
                     padding: "18px",
                     border: "1px solid rgba(255,255,255,0.2)",
                     height: "56px",

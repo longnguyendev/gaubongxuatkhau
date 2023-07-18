@@ -1,5 +1,4 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
-import * as React from "react";
 
 export default function BannerMid() {
   return (

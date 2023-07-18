@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
-import * as React from "react";
+import { PropsWithChildren } from "react";
 
-export default function TitlePage({ children }: any) {
+export default function TitlePage({ children }: PropsWithChildren) {
   return (
     <Box
       padding={"80px 0"}

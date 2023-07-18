@@ -1,4 +1,4 @@
-import TitlePage from "@/components/TitlePage";
+import TitlePage from "@/src/components/TitlePage";
 import { useRouter } from "next/router";
 import * as React from "react";
 import { Box, Container, Typography } from "@mui/material";

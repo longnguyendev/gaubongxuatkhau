@@ -1,5 +1,4 @@
 import { Box, Grid, Link, Typography } from "@mui/material";
-import * as React from "react";
 import Blog, { BlogProps } from "./BlogCard";
 import { useRouter } from "next/router";
 

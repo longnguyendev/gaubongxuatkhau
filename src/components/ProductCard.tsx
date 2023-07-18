@@ -1,9 +1,9 @@
-import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { CardActionArea, Link } from "@mui/material";
+import { CardActionArea } from "@mui/material";
+import Link from "./Link";
 
 export interface ProductCardProps {
   id: number;
@@ -15,11 +15,11 @@ export interface ProductCardProps {
 export default function ProductCard({ name, image, price }: ProductCardProps) {
   return (
     <Card sx={{ maxWidth: "100%" }}>
-      <Link href={"/detail"} sx={{ textDecoration: "none" }}>
+      <Link href="/detail" sx={{ textDecoration: "none" }}>
         <CardActionArea>
           <CardMedia component="img" height="100%" image={image} alt={name} />
           <CardContent>
-            <Typography gutterBottom variant="h5" textAlign={"center"}>
+            <Typography gutterBottom variant="h5" textAlign="center">
               {name}
             </Typography>
             <Typography

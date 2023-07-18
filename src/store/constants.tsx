@@ -1,23 +1,23 @@
-import { BlogPreviewProps } from "@/components/blog/BlogPreview";
+import { BlogPreviewProps as BlogPreview } from "@/src/components/blog/BlogPreview";
 
-export interface PopularPostProps {
+export interface PopularPost {
   id: number;
   title: string;
   image: string;
 }
 
-export interface categoriesProps {
+export interface Categorie {
   id: number;
   name: string;
 }
 
-export const categories: categoriesProps[] = [
+export const categories: Categorie[] = [
   { id: 1, name: "Fashion" },
   { id: 2, name: "Lifestyle" },
   { id: 3, name: "Party Time" },
 ];
 
-export const popularPosts: PopularPostProps[] = [
+export const popularPosts: PopularPost[] = [
   {
     id: 1,
     title: "One Color, Five Looks for Girls",
@@ -45,7 +45,7 @@ export const popularPosts: PopularPostProps[] = [
   },
 ];
 
-export const blogs: BlogPreviewProps[] = [
+export const blogs: BlogPreview[] = [
   {
     id: 1,
     title: "Why February Babies Are Extra Special",

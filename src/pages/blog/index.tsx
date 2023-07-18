@@ -1,6 +1,8 @@
-import Label from "@/components/Label";
-import TitlePage from "@/components/TitlePage";
-import BlogPreview, { BlogPreviewProps } from "@/components/blog/BlogPreview";
+import Label from "@/src/components/Label";
+import TitlePage from "@/src/components/TitlePage";
+import BlogPreview, {
+  BlogPreviewProps,
+} from "@/src/components/blog/BlogPreview";
 import { useRouter } from "next/router";
 import {
   Box,

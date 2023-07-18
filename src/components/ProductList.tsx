@@ -1,5 +1,4 @@
-import { Box, Button, Container, Grid, Typography } from "@mui/material";
-import * as React from "react";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import ProductCard, { ProductCardProps } from "./ProductCard";
 
 export interface CardsProps {

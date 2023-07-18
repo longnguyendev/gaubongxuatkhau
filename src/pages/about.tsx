@@ -1,4 +1,4 @@
-import TitlePage from "@/components/TitlePage";
+import TitlePage from "@/src/components/TitlePage";
 import {
   Box,
   Button,
