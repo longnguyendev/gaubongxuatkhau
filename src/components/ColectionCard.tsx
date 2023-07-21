@@ -24,6 +24,7 @@ export default function ColectionCard({
     <>
       <Card>
         <CardActionArea
+          className="collection-card"
           sx={{
             position: "relative",
             ":after": {
@@ -34,7 +35,13 @@ export default function ColectionCard({
             },
           }}
         >
-          <CardMedia component="img" width="100%" image={image} alt={image} />
+          <CardMedia
+            className="collection-card-image"
+            component="img"
+            width="100%"
+            image={image}
+            alt={image}
+          />
           <Box
             position={"absolute"}
             sx={{ bottom: "5%", left: "7%", right: "7%" }}
