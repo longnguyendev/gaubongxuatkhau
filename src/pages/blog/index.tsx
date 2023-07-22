@@ -1,14 +1,11 @@
 import Label from "@/src/components/Label";
 import TitlePage from "@/src/components/TitlePage";
-import BlogPreview, {
-  BlogPreviewProps,
-} from "@/src/components/blog/BlogPreview";
-import { useRouter } from "next/router";
+import BlogPreview from "@/src/components/blog/BlogPreview";
 import {
   Box,
+  Button,
   Container,
   Grid,
-  Link,
   List,
   ListItem,
   ListItemButton,
@@ -16,32 +13,14 @@ import {
 } from "@mui/material";
 import * as React from "react";
 import { blogs, categories, popularPosts } from "../../store/constants";
+import Link from "next/link";
 
 export default function Blog() {
-  const route = useRouter();
-  const handleClick = (id: string) => {
-    route.push(`/blog/${id}`);
-  };
   return (
     <>
       <TitlePage>VinaTeddy Blog</TitlePage>
       <Container maxWidth="lg">
         <Grid container spacing={8} padding={"60px 0"}>
-          <Grid item xs={12} sm={12} md={8}>
-            {blogs.map((blog) => (
-              <Link
-                key={blog.id}
-                // href={`blog/${blog.id}`}
-                sx={{ textDecoration: "none" }}
-                onClick={() => {
-                  handleClick(String(blog.id));
-                }}
-              >
-                <BlogPreview {...blog} />
-              </Link>
-            ))}
-          </Grid>
-
           <Grid item xs={12} sm={12} md={4}>
             <Box marginBottom={"50px"}>
               <Label>Categories</Label>
@@ -104,6 +83,13 @@ export default function Blog() {
                 ))}
               </List>
             </Box>
+          </Grid>
+          <Grid item xs={12} sm={12} md={8}>
+            {blogs.map((blog) => (
+              <Grid key={blog.id} item xs={12} marginBottom={"50px"}>
+                <BlogPreview {...blog} />
+              </Grid>
+            ))}
           </Grid>
         </Grid>
       </Container>

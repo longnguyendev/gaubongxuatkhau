@@ -24,7 +24,6 @@ export default function ColectionCard({
     <>
       <Card>
         <CardActionArea
-          className="collection-card"
           sx={{
             position: "relative",
             ":after": {
@@ -32,15 +31,21 @@ export default function ColectionCard({
               position: "absolute",
               inset: "10px",
               border: "2px dashed #fff",
+              borderRadius: "6px",
+            },
+            ":hover": {
+              ".MuiCardMedia-root": {
+                transform: "scale(1.1)",
+              },
             },
           }}
         >
           <CardMedia
-            className="collection-card-image"
             component="img"
             width="100%"
             image={image}
             alt={image}
+            sx={{ transition: "0.2s ease-in" }}
           />
           <Box
             position={"absolute"}

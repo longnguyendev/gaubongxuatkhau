@@ -3,7 +3,6 @@ import { createTheme } from "@mui/material/styles";
 declare module "@mui/material/Button" {
   interface ButtonPropsVariantOverrides {
     dashed: true;
-    myOtherVariant: true;
   }
 }
 
@@ -50,10 +49,7 @@ export const theme = createTheme({
             ":after": {
               content: '""',
               position: "absolute",
-              top: "3px",
-              bottom: "3px",
-              left: "3px",
-              right: "3px",
+              inset: "3px",
               border: "2px dashed #fff",
               borderRadius: "50px",
             },
