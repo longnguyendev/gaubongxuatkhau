@@ -1,7 +1,12 @@
 import { Box, Typography } from "@mui/material";
 import { PropsWithChildren } from "react";
 
-export default function TitlePage({ children }: PropsWithChildren) {
+export interface titlePageProps {
+  title: string;
+  description?: string;
+}
+
+export default function TitlePage({ title, description }: titlePageProps) {
   return (
     <Box
       padding={"80px 0"}
@@ -12,7 +17,10 @@ export default function TitlePage({ children }: PropsWithChildren) {
       }}
     >
       <Typography fontSize={"47px"} color={"#183a5c"} fontWeight={700}>
-        {children}
+        {title}
+      </Typography>
+      <Typography fontSize={"18px"} color={"#49a3b9"} fontWeight={700}>
+        {description}
       </Typography>
     </Box>
   );

@@ -3,7 +3,6 @@ import TitlePage from "@/src/components/TitlePage";
 import BlogPreview from "@/src/components/blog/BlogPreview";
 import {
   Box,
-  Button,
   Container,
   Grid,
   List,
@@ -13,12 +12,14 @@ import {
 } from "@mui/material";
 import * as React from "react";
 import { blogs, categories, popularPosts } from "../../store/constants";
-import Link from "next/link";
 
 export default function Blog() {
   return (
     <>
-      <TitlePage>VinaTeddy Blog</TitlePage>
+      <TitlePage
+        title="VinaTeddy Blog"
+        description="We’ve picked few topics we’re pretty sure you’ll ❤ to read about. Check back often and enjoy."
+      />
       <Container maxWidth="lg">
         <Grid container spacing={8} padding={"60px 0"}>
           <Grid item xs={12} sm={12} md={4}>

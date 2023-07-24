@@ -41,7 +41,7 @@ const abouts: AboutProps[] = [
 export default function About() {
   return (
     <>
-      <TitlePage>About Us</TitlePage>
+      <TitlePage title="About" />
       <Container maxWidth="lg">
         <Box padding={"100px 0"}>
           <Grid container spacing={{ xs: 0, md: 8 }}>

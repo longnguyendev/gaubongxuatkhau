@@ -12,7 +12,7 @@ export default function App(props: IAppProps) {
   const blog = blogs.find((blog) => blog.id === Number(id));
   return (
     <>
-      <TitlePage>{blog?.title}</TitlePage>
+      <TitlePage title={String(blog?.title)} />
       <Container maxWidth="lg">
         <Box padding={"80px 0"}>
           <Box component="img" src={`/${blog?.image}`} width={"100%"} />

@@ -7,17 +7,7 @@ import { ProductCardProps } from "@/src/components/ProductCard";
 import ColectionList from "@/src/components/ColectionList";
 import BlogList from "@/src/components/BlogList";
 import ProductList from "@/src/components/ProductList";
-
-const products: ProductCardProps[] = [
-  { id: 1, name: "Gấu Chó", image: "baby-prod21-1-390x439.jpg", price: 200000 },
-  { id: 2, name: "Gấu mèo", image: "baby-prod22-1-390x439.jpg", price: 200000 },
-  { id: 3, name: "Gấu heo", image: "baby-prod17-2-390x439.jpg", price: 200000 },
-  { id: 4, name: "Gấu heo", image: "baby-prod23-1-390x439.jpg", price: 200000 },
-  { id: 5, name: "Gấu heo", image: "baby-prod20-1-390x439.jpg", price: 200000 },
-  { id: 6, name: "Gấu heo", image: "baby-prod19-1-390x439.jpg", price: 200000 },
-  { id: 7, name: "Gấu heo", image: "baby-prod8-4-390x439.jpg", price: 200000 },
-  { id: 8, name: "Gấu heo", image: "baby-prod24-1-390x439.jpg", price: 200000 },
-];
+import { products } from "@/src/store/constants";
 
 const Collections: ColectionCardProps[] = [
   {
@@ -36,7 +26,7 @@ const Collections: ColectionCardProps[] = [
   },
   {
     id: 3,
-    title: "Girls",
+    title: "Toys",
     type: "&Game",
     image: "banner-toys-home.jpg",
     description: "For all ages",

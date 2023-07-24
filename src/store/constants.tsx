@@ -1,4 +1,28 @@
 import { BlogPreviewProps as BlogPreview } from "@/src/components/blog/BlogPreview";
+import { ProductCardProps } from "../components/ProductCard";
+
+export const products: ProductCardProps[] = [
+  {
+    id: 1,
+    name: "Gấu Chó",
+    image: "baby-prod21-1-390x439.jpg",
+    price: 200000,
+    promotion: 25,
+  },
+  { id: 2, name: "Gấu mèo", image: "baby-prod22-1-390x439.jpg", price: 200000 },
+  {
+    id: 3,
+    name: "Gấu heo",
+    image: "baby-prod17-2-390x439.jpg",
+    price: 200000,
+    promotion: 50,
+  },
+  { id: 4, name: "Gấu heo", image: "baby-prod23-1-390x439.jpg", price: 200000 },
+  { id: 5, name: "Gấu heo", image: "baby-prod20-1-390x439.jpg", price: 200000 },
+  { id: 6, name: "Gấu heo", image: "baby-prod19-1-390x439.jpg", price: 200000 },
+  { id: 7, name: "Gấu heo", image: "baby-prod8-4-390x439.jpg", price: 200000 },
+  { id: 8, name: "Gấu heo", image: "baby-prod24-1-390x439.jpg", price: 200000 },
+];
 
 export interface PopularPost {
   id: number;
