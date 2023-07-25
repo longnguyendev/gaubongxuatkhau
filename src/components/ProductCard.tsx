@@ -3,7 +3,8 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Box, Button, CardActionArea, Stack } from "@mui/material";
-import Link from "./Link";
+
+import { Link } from "./Link";
 
 export interface ProductCardProps {
   id: number;
@@ -13,7 +14,7 @@ export interface ProductCardProps {
   promotion?: number;
 }
 
-export default function ProductCard({
+export function ProductCard({
   name,
   image,
   price,
@@ -23,34 +24,34 @@ export default function ProductCard({
   return (
     <Card
       sx={{
+        textAlign: "center",
         borderRadius: "6px",
         maxWidth: "100%",
         position: "relative",
         ":hover": {
           ".MuiBox-root": {
             opacity: 1,
-            bottom: 10,
+            bottom: "50%",
+            transform: "translateY(50%)",
           },
         },
-        ...(promotion
-          ? {
-              ":after": {
-                position: "absolute",
-                content: `"-${promotion}%"`,
-                width: "40px",
-                height: "40px",
-                lineHeight: "40px",
-                background: "#ff8087",
-                borderRadius: "50%",
-                color: "#fff",
-                fontSize: "12px",
-                textAlign: "center",
-                top: "20px",
-                left: "20px",
-                fontWeight: "bold",
-              },
-            }
-          : {}),
+        ...(promotion && {
+          ":after": {
+            position: "absolute",
+            content: `"-${promotion}%"`,
+            width: "40px",
+            height: "40px",
+            lineHeight: "40px",
+            background: "#ff8087",
+            borderRadius: "50%",
+            color: "#fff",
+            fontSize: "12px",
+            textAlign: "center",
+            top: "20px",
+            left: "20px",
+            fontWeight: "bold",
+          },
+        }),
       }}
     >
       <CardActionArea LinkComponent={Link} href={`/shop/${id}`}>
@@ -66,26 +67,26 @@ export default function ProductCard({
             gutterBottom
             variant="h5"
             textAlign="center"
-            fontWeight={"bold"}
+            fontWeight="bold"
           >
             {name}
           </Typography>
           <Stack
-            direction={"row"}
-            spacing={2}
-            alignItems={"center"}
-            justifyContent={"center"}
+            direction="row"
+            spacing={1}
+            alignItems="center"
+            justifyContent="center"
           >
             {promotion && (
               <Typography
                 color="#999"
-                fontWeight={"bold"}
+                fontWeight="bold"
                 sx={{ textDecoration: "line-through" }}
               >
                 {price.toLocaleString()}
               </Typography>
             )}
-            <Typography fontSize={"17px"} color="#81d1e5" fontWeight={"700"}>
+            <Typography fontSize="17px" color="#81d1e5" fontWeight={700}>
               {promotion
                 ? (price - (price * promotion) / 100).toLocaleString()
                 : price.toLocaleString()}
@@ -97,7 +98,7 @@ export default function ProductCard({
         sx={{
           opacity: 0,
           position: "absolute",
-          bottom: 0,
+          bottom: "30%",
           left: 0,
           right: 0,
           zIndex: 1,

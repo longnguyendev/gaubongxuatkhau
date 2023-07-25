@@ -1,6 +1,6 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 
-export default function BannerMid() {
+export function BannerMid() {
   return (
     <Grid container spacing={0}>
       <Grid item xs={12} md={6}>
@@ -23,25 +23,25 @@ export default function BannerMid() {
               textAlign: "center",
             }}
           >
-            <Typography color={"#81d1e5"} fontSize={"19px"} fontWeight={700}>
+            <Typography color="#81d1e5" fontSize="19px" fontWeight={700}>
               BACK TO SCHOOL
             </Typography>
             <Typography
               variant="h3"
-              fontFamily={"Hensa"}
-              color={"#fff"}
-              fontSize={"72px"}
+              fontFamily="Hensa"
+              color="#fff"
+              fontSize="72px"
             >
               Girls Collection
             </Typography>
-            <Typography color={"#fff"} fontSize={"19px"} fontWeight={500}>
+            <Typography color="#fff" fontSize="19px" fontWeight={500}>
               We celebrate childhood by supporting babies, children, and
               families
             </Typography>
-            <Typography color={"#fff"} fontSize={"19px"} fontWeight={500}>
+            <Typography color="#fff" fontSize="19px" fontWeight={500}>
               with thoughtful designs, quality materials and construction,
             </Typography>
-            <Typography color={"#fff"} fontSize={"19px"} fontWeight={500}>
+            <Typography color="#fff" fontSize="19px" fontWeight={500}>
               and convenient shopping options.
             </Typography>
             <Button

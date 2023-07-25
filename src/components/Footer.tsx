@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 
-export default function Footer() {
+export function Footer() {
   return (
     <Box
       sx={{
@@ -19,13 +19,13 @@ export default function Footer() {
       }}
     >
       <Box sx={{ background: "#88cada ", padding: "45px 0" }}>
-        <Container maxWidth={"xl"}>
+        <Container maxWidth="xl">
           <Grid container spacing={0}>
             <Grid item xs={12} sm={6}>
-              <Typography fontSize={"24px"} color={"#fff"} fontWeight={700}>
+              <Typography fontSize="24px" color="#fff" fontWeight={700}>
                 Subscribe to our Newsletter
               </Typography>
-              <Typography color={"#fff"} fontSize={"14px"}>
+              <Typography color="#fff" fontSize="14px">
                 Be the first to know about new products, sales and promotions.
               </Typography>
             </Grid>

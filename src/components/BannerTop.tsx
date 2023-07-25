@@ -1,6 +1,6 @@
 import { Box, Button, Typography } from "@mui/material";
 
-export default function BannerTop() {
+export function BannerTop() {
   return (
     <Box
       sx={{
@@ -28,8 +28,8 @@ export default function BannerTop() {
           variant="h1"
           fontFamily="Hensa"
           color="white"
-          position={"relative"}
-          textAlign={"center"}
+          position="relative"
+          textAlign="center"
         >
           Connecting Heart
         </Typography>

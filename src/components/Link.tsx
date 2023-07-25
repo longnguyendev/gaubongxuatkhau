@@ -1,9 +1,10 @@
 import clsx from "clsx";
+import { AnchorHTMLAttributes, forwardRef } from "react";
 import { useRouter } from "next/router";
 import NextLink, { LinkProps as NextLinkProps } from "next/link";
 import MuiLink, { LinkProps as MuiLinkProps } from "@mui/material/Link";
+
 import { styled } from "@mui/material/styles";
-import { AnchorHTMLAttributes, forwardRef } from "react";
 
 // Add support for the sx prop for consistency with the other branches.
 const Anchor = styled("a")({});
@@ -62,7 +63,7 @@ export type LinkProps = {
 
 // A styled version of the Next.js Link component:
 // https://nextjs.org/docs/api-reference/next/link
-const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
+export const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
   props,
   ref
 ) {
@@ -134,5 +135,3 @@ const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
     />
   );
 });
-
-export default Link;

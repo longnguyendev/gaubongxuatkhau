@@ -1,4 +1,3 @@
-import TitlePage from "@/src/components/TitlePage";
 import {
   Box,
   Button,
@@ -9,56 +8,31 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
-import * as React from "react";
 
-export interface AboutProps {
-  title: string;
-  description: string;
-  image: string;
-}
-
-const abouts: AboutProps[] = [
-  {
-    title: "Cute Models",
-    description:
-      "From our in-house Design and Creative studios to our monthly birthday cupcake breaks. We love to build moments.",
-    image: "boys-shirts-100x100.jpg",
-  },
-  {
-    title: "Awesome Products",
-    description:
-      "From our in-house Design and Creative studios to our monthly birthday cupcake breaks. We love to build moments.",
-    image: "boys-jumpsuits-100x100.jpg",
-  },
-  {
-    title: "Best Quality",
-    description:
-      "From our in-house Design and Creative studios to our monthly birthday cupcake breaks. We love to build moments.",
-    image: "boys-jeans-100x100.jpg",
-  },
-];
+import { PageTitle } from "@/components";
+import { abouts } from "@/store/constants";
 
 export default function About() {
   return (
     <>
-      <TitlePage title="About" />
+      <PageTitle title="About" />
       <Container maxWidth="lg">
-        <Box padding={"100px 0"}>
+        <Box padding="100px 0">
           <Grid container spacing={{ xs: 0, md: 8 }}>
             <Grid item xs={12} md={6}>
               <Box
-                component={"img"}
-                width={"100%"}
+                component="img"
+                width="100%"
                 src="bs-blog-1-650x450.jpg"
                 alt="bs-blog"
               />
             </Grid>
-            <Grid item xs={12} md={6} display={"flex"} alignItems={"center"}>
+            <Grid item xs={12} md={6} display="flex" alignItems="center">
               <Box>
-                <Typography fontSize={"30px"} fontWeight={700} color={"#333"}>
+                <Typography fontSize="30px" fontWeight={700} color="#333">
                   Story & Mission
                 </Typography>
-                <Typography margin={"18px 0"} fontSize={"18px"} color={"#999"}>
+                <Typography margin="18px 0" fontSize="18px" color="#999">
                   We believe that childhood is a celebration, and the colorful
                   prints and cute characters we design are inspired by the joy
                   and love children bring into our lives. We celebrate childhood
@@ -67,7 +41,7 @@ export default function About() {
                   shopping options.
                 </Typography>
                 <Box
-                  component={"img"}
+                  component="img"
                   src="signature-160x63.png"
                   alt="signature"
                 />
@@ -76,10 +50,10 @@ export default function About() {
           </Grid>
         </Box>
       </Container>
-      <Box padding={"100px 0"} sx={{ background: "#ebf7fa " }}>
+      <Box padding="100px 0" sx={{ background: "#ebf7fa " }}>
         <Container maxWidth="lg">
           <Grid container spacing={4}>
-            {abouts.map((about, index) => (
+            {abouts?.map((about, index) => (
               <Grid key={index} item xs={12} sm={4}>
                 <Card
                   sx={{
@@ -117,10 +91,10 @@ export default function About() {
                       alt={about.image}
                     />
                     <CardContent>
-                      <Typography gutterBottom fontSize={"18px"}>
+                      <Typography gutterBottom fontSize="18px">
                         {about.title}
                       </Typography>
-                      <Typography color="text.secondary" fontSize={"18px"}>
+                      <Typography color="text.secondary" fontSize="18px">
                         {about.description}
                       </Typography>
                     </CardContent>
@@ -133,25 +107,21 @@ export default function About() {
       </Box>
 
       <Container maxWidth="lg">
-        <Box padding={"100px 0"}>
+        <Box padding="100px 0">
           <Grid container spacing={{ xs: 4, md: 8 }}>
-            <Grid item xs={12} md={6} display={"flex"} alignItems={"center"}>
+            <Grid item xs={12} md={6} display="flex" alignItems="center">
               <Box>
-                <Typography fontSize={"30px"} fontWeight={700} color={"#333"}>
+                <Typography fontSize="30px" fontWeight={700} color="#333">
                   Our Philosophy
                 </Typography>
-                <Typography margin={"18px 0"} fontSize={"18px"} color={"#999"}>
+                <Typography margin="18px 0" fontSize="18px" color="#999">
                   We believe that childhood is a celebration, and the colorful
                   prints and cute characters we design are inspired by the joy
                   and love children bring into our lives. We celebrate childhood
                   by supporting children and families with thoughtful designs,
                   quality materials and convenient shopping options.
                 </Typography>
-                <Typography
-                  marginBottom={"35px"}
-                  fontSize={"18px"}
-                  color={"#999"}
-                >
+                <Typography marginBottom="35px" fontSize="18px" color="#999">
                   We continue this heritage in every little detail to make
                   dressing easier for mom and life more comfortable for babies,
                   and as we move into the future, we are proud to help families
@@ -167,8 +137,8 @@ export default function About() {
             </Grid>
             <Grid item xs={12} md={6}>
               <Box
-                component={"img"}
-                width={"100%"}
+                component="img"
+                width="100%"
                 src="bs-blog-3-650x450.jpg"
                 alt="bs-blog"
               />

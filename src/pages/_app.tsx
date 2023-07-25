@@ -1,8 +1,10 @@
-import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "@emotion/react";
+
 import { theme } from "@/styles/theme";
-import Layout from "@/src/components/layout/Layout";
+
+import "@/styles/globals.css";
+import { Layout } from "@/components";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

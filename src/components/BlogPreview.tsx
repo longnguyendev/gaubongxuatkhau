@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import {
   Box,
   Button,
@@ -7,8 +9,6 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
-import Link from "next/link";
-import * as React from "react";
 
 export interface BlogPreviewProps {
   id: number;
@@ -17,16 +17,11 @@ export interface BlogPreviewProps {
   content: string;
 }
 
-export default function BlogPreview({
-  id,
-  title,
-  image,
-  content,
-}: BlogPreviewProps) {
+export function BlogPreview({ id, title, image, content }: BlogPreviewProps) {
   return (
     <Card>
       <CardActionArea LinkComponent={Link} href={`blog/${id}`}>
-        <Box position={"relative"}>
+        <Box position="relative">
           <CardMedia
             component="img"
             width="100%"
@@ -40,10 +35,10 @@ export default function BlogPreview({
             gutterBottom
             variant="h5"
             component="div"
-            textAlign={"left"}
+            textAlign="left"
             fontWeight={700}
-            fontSize={"27px"}
-            color={"#545454"}
+            fontSize="27px"
+            color="#545454"
           >
             {title}
           </Typography>

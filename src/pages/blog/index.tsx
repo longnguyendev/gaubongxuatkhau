@@ -1,6 +1,3 @@
-import Label from "@/src/components/Label";
-import TitlePage from "@/src/components/TitlePage";
-import BlogPreview from "@/src/components/blog/BlogPreview";
 import {
   Box,
   Container,
@@ -10,20 +7,21 @@ import {
   ListItemButton,
   ListItemText,
 } from "@mui/material";
-import * as React from "react";
-import { blogs, categories, popularPosts } from "../../store/constants";
 
-export default function Blog() {
+import { BlogPreview, Label, PageTitle } from "@/components";
+import { blogsReview, categories, popularPosts } from "@/store/constants";
+
+export default function BlogPage() {
   return (
     <>
-      <TitlePage
+      <PageTitle
         title="VinaTeddy Blog"
         description="We’ve picked few topics we’re pretty sure you’ll ❤ to read about. Check back often and enjoy."
       />
       <Container maxWidth="lg">
         <Grid container spacing={8} padding={"60px 0"}>
           <Grid item xs={12} sm={12} md={4}>
-            <Box marginBottom={"50px"}>
+            <Box marginBottom="50px">
               <Label>Categories</Label>
               <List>
                 {categories.map((category) => (
@@ -40,7 +38,7 @@ export default function Blog() {
               </List>
             </Box>
 
-            <Box marginBottom={"50px"}>
+            <Box marginBottom="50px">
               <Label>Popular Post</Label>
               <List>
                 {popularPosts.map((post) => (
@@ -51,12 +49,12 @@ export default function Blog() {
                   >
                     <ListItemButton>
                       <Box
-                        position={"relative"}
-                        width={"58px"}
-                        height={"58px"}
+                        position="relative"
+                        width="58px"
+                        height="58px"
                         flexShrink={0}
-                        borderRadius={"50%"}
-                        marginRight={"20px"}
+                        borderRadius="50%"
+                        marginRight="20px"
                         sx={{
                           "::after": {
                             position: "absolute",
@@ -68,13 +66,13 @@ export default function Blog() {
                         }}
                       >
                         <Box
-                          position={"absolute"}
-                          padding={"6px"}
-                          component={"img"}
+                          position="absolute"
+                          padding="6px"
+                          component="img"
                           src={post.image}
-                          width={"100%"}
-                          height={"100%"}
-                          borderRadius={"50%"}
+                          width="100%"
+                          height="100%"
+                          borderRadius="50%"
                         ></Box>
                       </Box>
 
@@ -86,7 +84,7 @@ export default function Blog() {
             </Box>
           </Grid>
           <Grid item xs={12} sm={12} md={8}>
-            {blogs.map((blog) => (
+            {blogsReview.map((blog) => (
               <Grid key={blog.id} item xs={12} marginBottom={"50px"}>
                 <BlogPreview {...blog} />
               </Grid>

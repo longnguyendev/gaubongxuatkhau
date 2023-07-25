@@ -6,20 +6,14 @@ import {
   Typography,
 } from "@mui/material";
 
-export interface ColectionCardProps {
+export interface CategoryCardCardProps {
   id: number;
   title: string;
   image: string;
   type: string;
-  description: string;
 }
 
-export function ColectionCard({
-  title,
-  image,
-  type,
-  description,
-}: ColectionCardProps) {
+export function CategoryCard({ title, image, type }: CategoryCardCardProps) {
   return (
     <>
       <Card>
@@ -49,21 +43,24 @@ export function ColectionCard({
           />
           <Box
             position="absolute"
-            sx={{ bottom: "5%", left: "7%", right: "7%" }}
+            sx={{ bottom: "10%", left: "7%", right: "7%" }}
           >
-            <Typography variant="h2" fontFamily="Hensa" color="#fff">
+            <Typography
+              fontSize="40px"
+              fontFamily="Hensa"
+              color="#fff"
+              sx={{ textShadow: "0px 0px 6px rgba(0,0,0,.2)" }}
+            >
               {title}
             </Typography>
             <Typography
-              variant="h4"
               color="#fff"
-              fontSize={27}
-              fontWeight={700}
+              fontSize="20px"
+              fontWeight="700"
               sx={{ wordWrap: "break-word" }}
             >
               {type}
             </Typography>
-            <Typography color="#fff">{description}</Typography>
           </Box>
         </CardActionArea>
       </Card>

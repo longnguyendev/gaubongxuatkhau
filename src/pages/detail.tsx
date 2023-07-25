@@ -54,8 +54,8 @@ export default function Detail() {
 
   return (
     <>
-      <Container maxWidth={"xl"}>
-        <Grid container spacing={0} marginTop={"150px"}>
+      <Container maxWidth="xl">
+        <Grid container spacing={0} marginTop="150px">
           <Grid item xs={12} md={6}>
             <Box
               component="img"
@@ -84,7 +84,7 @@ export default function Detail() {
             md={6}
             sx={{ padding: { xs: "0", sm: "20px", lg: "80px" } }}
           >
-            <Typography fontSize={"40px"} color={"#333"} fontWeight={700}>
+            <Typography fontSize="40px" color="#333" fontWeight={700}>
               Stuffed Blue Shark
             </Typography>
             <Typography>
@@ -94,7 +94,7 @@ export default function Detail() {
               amet quam egestas semper. Aenean ultricies mi vitae est. Mauris
               placerat eleifend leo.
             </Typography>
-            <Typography fontSize={"30px"} color={"#333"}>
+            <Typography fontSize="30px" color="#333">
               $29.99
             </Typography>
             <Stack

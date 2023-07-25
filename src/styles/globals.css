@@ -17,12 +17,12 @@ input[type="number"] {
 
 @font-face {
   font-family: "Hensa";
-  src: url("../public/Hensa.otf");
+  src: url("../../public/Hensa.otf");
   /* Nếu bạn có nhiều định dạng font, bạn có thể liệt kê chúng ở đây */
 }
 @font-face {
   font-family: "Quicksand";
-  src: url("../public/Quicksand-VariableFont_wght.ttf");
+  src: url("../../public/Quicksand-VariableFont_wght.ttf");
   /* Nếu bạn có nhiều định dạng font, bạn có thể liệt kê chúng ở đây */
 }
 @keyframes move-wave {

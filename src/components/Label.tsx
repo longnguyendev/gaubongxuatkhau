@@ -4,11 +4,11 @@ export interface LabelProps {
   children: string;
 }
 
-export default function Label({ children }: LabelProps) {
+export function Label({ children }: LabelProps) {
   return (
     <Box
-      width={"100%"}
-      padding={"15px"}
+      width="100%"
+      padding="15px"
       sx={{
         background: "#81d1e5",
         fontSize: "18px",

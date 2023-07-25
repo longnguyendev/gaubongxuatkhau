@@ -1,55 +1,13 @@
-import BannerTop from "@/src/components/BannerTop";
-import BannerMid from "@/src/components/BannerMid";
-import { BlogProps } from "@/src/components/BlogCard";
-import { Container } from "@mui/material";
-import { ColectionCardProps } from "@/src/components/ColectionCard";
-import { ProductCardProps } from "@/src/components/ProductCard";
-import ColectionList from "@/src/components/ColectionList";
-import BlogList from "@/src/components/BlogList";
-import ProductList from "@/src/components/ProductList";
-import { products } from "@/src/store/constants";
+import { Box, Button, Container, Stack, Typography } from "@mui/material";
 
-const Collections: ColectionCardProps[] = [
-  {
-    id: 1,
-    title: "Girls",
-    type: "Clothing",
-    image: "banner-girls-home.jpg",
-    description: "Wolrd's Best Brand",
-  },
-  {
-    id: 2,
-    title: "Boys",
-    type: "Clothing",
-    image: "banner-boys-home.jpg",
-    description: "Increddible Quality",
-  },
-  {
-    id: 3,
-    title: "Toys",
-    type: "&Game",
-    image: "banner-toys-home.jpg",
-    description: "For all ages",
-  },
-];
-
-const blogs: BlogProps[] = [
-  {
-    id: 1,
-    title: "Why February Babies Are Extra Special",
-    image: "bs-blog-1-640x640.jpg",
-  },
-  {
-    id: 2,
-    title: "The Surprising Way Motherhood Changed Me",
-    image: "bs-blog-2-640x640.jpg",
-  },
-  {
-    id: 3,
-    title: "How Aromatherapy Can Impact NICU Babies",
-    image: "bs-blog-3-640x640.jpg",
-  },
-];
+import {
+  BannerMid,
+  BannerTop,
+  BlogList,
+  ColectionList,
+  ProductList,
+} from "@/components";
+import { products, Collections, blogs } from "@/store/constants";
 
 export default function Home() {
   return (
@@ -57,7 +15,33 @@ export default function Home() {
       <BannerTop />
       <Container maxWidth="lg">
         <ColectionList colections={Collections} />
-        <ProductList products={products} />
+        <Box marginTop={"115px"}>
+          <Typography
+            fontFamily={"Hensa"}
+            fontSize={"64px"}
+            sx={{ textAlign: "center", marginBottom: "20px" }}
+          >
+            {"You'll ❤ This"}
+          </Typography>
+          <Typography variant="h6" textAlign={"center"} color={"#777777"}>
+            We’ve picked few pieces we’re pretty sure you’ll love
+          </Typography>
+          <Typography variant="h6" textAlign={"center"} color={"#777777"}>
+            Check back often and enjoy.
+          </Typography>
+        </Box>
+        <Box padding={"80px 0"}>
+          <ProductList products={products} />
+          <Stack direction="row" justifyContent="center">
+            <Button
+              variant="dashed"
+              color="secondary"
+              sx={{ padding: "14px 20px" }}
+            >
+              Shop all product
+            </Button>
+          </Stack>
+        </Box>
       </Container>
       <BannerMid />
       <Container maxWidth="lg">

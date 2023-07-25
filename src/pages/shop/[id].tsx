@@ -1,3 +1,6 @@
+import { useRouter } from "next/router";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
+
 import {
   Box,
   Button,
@@ -11,22 +14,11 @@ import {
 } from "@mui/material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useState } from "react";
-import { Controller, SubmitHandler, useForm } from "react-hook-form";
+
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useRouter } from "next/router";
-import { products } from "@/src/store/constants";
 
-export interface IAppProps {}
-
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: "60vw",
-  boxShadow: 24,
-};
+import { products } from "@/store/constants";
 
 type Inputs = {
   value: number;
@@ -36,7 +28,7 @@ const schema = yup.object({
   value: yup.number().min(1).max(99).required("Required"),
 });
 
-export default function Detail() {
+export default function ShopDetailPage() {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => setOpen(true);
@@ -60,8 +52,8 @@ export default function Detail() {
 
   return (
     <>
-      <Container maxWidth={"xl"}>
-        <Grid container spacing={0} marginTop={"150px"}>
+      <Container maxWidth="lg">
+        <Grid container spacing={0} marginTop="150px">
           <Grid item xs={12} md={6}>
             <Box
               component="img"
@@ -80,7 +72,14 @@ export default function Detail() {
                 component="img"
                 src={`../${product?.image}`}
                 alt={product?.name}
-                sx={style}
+                sx={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  width: "60vw",
+                  boxShadow: 24,
+                }}
               />
             </Modal>
           </Grid>
@@ -90,7 +89,7 @@ export default function Detail() {
             md={6}
             sx={{ padding: { xs: "0", sm: "20px", lg: "80px" } }}
           >
-            <Typography fontSize={"40px"} color={"#333"} fontWeight={700}>
+            <Typography fontSize="40px" color="#333" fontWeight={700}>
               {product?.name}
             </Typography>
             <Typography>
@@ -100,17 +99,17 @@ export default function Detail() {
               amet quam egestas semper. Aenean ultricies mi vitae est. Mauris
               placerat eleifend leo.
             </Typography>
-            <Stack direction={"row"} spacing={2} alignItems={"center"}>
+            <Stack direction="row" spacing={1} alignItems="center">
               {product?.promotion && (
                 <Typography
-                  fontSize={"18px"}
+                  fontSize="18px"
                   color="#999"
                   sx={{ textDecoration: "line-through" }}
                 >
                   {product?.price.toLocaleString()}
                 </Typography>
               )}
-              <Typography fontSize={"30px"} color={"#333"}>
+              <Typography fontSize="30px" color="#333">
                 {product?.promotion
                   ? (
                       product?.price -

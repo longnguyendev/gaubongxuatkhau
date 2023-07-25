@@ -1,3 +1,6 @@
+import { useRouter } from "next/router";
+import { useState } from "react";
+
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -16,10 +19,9 @@ import Image from "next/image";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import { useRouter } from "next/router";
-import { useState } from "react";
-import Link from "./Link";
 import { Stack } from "@mui/material";
+
+import { Link } from "./Link";
 
 interface Props {
   /**
@@ -39,7 +41,7 @@ const navItems = [
   { label: "Contact", value: "/contact" },
 ];
 
-export default function Header(props: Props) {
+export function Header(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
 

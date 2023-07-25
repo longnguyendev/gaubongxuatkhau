@@ -6,7 +6,8 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
-import Link from "./Link";
+
+import { Link } from "./Link";
 
 export interface BlogProps {
   id: number;
@@ -14,14 +15,14 @@ export interface BlogProps {
   image: string;
 }
 
-export default function BlogCard({ id, title, image }: BlogProps) {
+export function BlogCard({ id, title, image }: BlogProps) {
   return (
     <Card sx={{ borderRadius: "6px" }}>
       <CardActionArea LinkComponent={Link} href={`/blog/${id}`}>
-        <Box position={"relative"}>
+        <Box position="relative">
           <CardMedia component="img" width="100%" image={image} alt={image} />
           <Box
-            position={"absolute"}
+            position="absolute"
             sx={{
               inset: "10px",
               border: "2px dashed #fff",
@@ -34,10 +35,10 @@ export default function BlogCard({ id, title, image }: BlogProps) {
             gutterBottom
             variant="h5"
             component="div"
-            textAlign={"left"}
+            textAlign="left"
             fontWeight={700}
-            fontSize={"27px"}
-            color={"#545454"}
+            fontSize="27px"
+            color="#545454"
           >
             {title}
           </Typography>
