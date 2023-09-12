@@ -1,5 +1,3 @@
-export interface IAppProps {}
-
-export default function ContactPage(props: IAppProps) {
+export default function ContactPage() {
   return <div></div>;
 }

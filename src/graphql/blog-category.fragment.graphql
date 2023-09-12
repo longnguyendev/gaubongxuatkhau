@@ -1,0 +1,7 @@
+fragment BlogCategory on BlogCategoryEntity {
+  id
+  attributes {
+    slug
+    name
+  }
+}

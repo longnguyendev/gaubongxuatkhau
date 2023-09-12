@@ -1,0 +1,17 @@
+query Blogs(
+  $pagination: PaginationArg
+  $filters: BlogFiltersInput
+  $sort: [String]
+) {
+  blogs(pagination: $pagination, filters: $filters, sort: $sort) {
+    data {
+      ...Blog
+    }
+    meta {
+      pagination {
+        page
+        pageCount
+      }
+    }
+  }
+}

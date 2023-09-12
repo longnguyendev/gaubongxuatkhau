@@ -2,7 +2,6 @@ import {
   Box,
   Button,
   Card,
-  CardActionArea,
   CardContent,
   Container,
   Grid,
@@ -12,7 +11,7 @@ import {
 import { PageTitle } from "@/components";
 import { abouts } from "@/store/constants";
 
-export default function About() {
+export default function AboutPage() {
   return (
     <>
       <PageTitle title="About" />
@@ -62,50 +61,44 @@ export default function About() {
                       transform: "translateY(-5px)",
                       boxShadow: "0 0px 40px 0 rgba(0, 0, 0, 0.15)",
                     },
+                    position: "relative",
+                    textAlign: "center",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    padding: "50px 20px",
+                    ":before": {
+                      position: "absolute",
+                      content: '""',
+                      inset: "10px",
+                      border: "2px dashed #000000",
+                      opacity: 0.1,
+                    },
                   }}
                 >
-                  <CardActionArea
-                    sx={{
-                      position: "relative",
-                      textAlign: "center",
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      padding: "50px 20px",
-                      ":before": {
-                        position: "absolute",
-                        content: '""',
-                        inset: "10px",
-                        border: "2px dashed #000000",
-                        opacity: 0.1,
-                      },
-                    }}
-                  >
-                    <Box
-                      component="img"
-                      height="54px"
-                      width="54px"
-                      sx={{ borderRadius: "50%" }}
-                      src={about.image}
-                      alt={about.image}
-                    />
-                    <CardContent>
-                      <Typography gutterBottom fontSize="18px">
-                        {about.title}
-                      </Typography>
-                      <Typography color="text.secondary" fontSize="18px">
-                        {about.description}
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
+                  <Box
+                    component="img"
+                    height="54px"
+                    width="54px"
+                    sx={{ borderRadius: "50%" }}
+                    src={about.image}
+                    alt={about.image}
+                  />
+                  <CardContent>
+                    <Typography gutterBottom fontSize="18px">
+                      {about.title}
+                    </Typography>
+                    <Typography color="text.secondary" fontSize="18px">
+                      {about.description}
+                    </Typography>
+                  </CardContent>
                 </Card>
               </Grid>
             ))}
           </Grid>
         </Container>
       </Box>
-
       <Container maxWidth="lg">
         <Box padding="100px 0">
           <Grid container spacing={{ xs: 4, md: 8 }}>

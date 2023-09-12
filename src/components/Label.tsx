@@ -13,7 +13,7 @@ export function Label({ children }: LabelProps) {
         background: "#81d1e5",
         fontSize: "18px",
         fontWeight: "bold",
-        color: "#fff",
+        color: "white",
         borderRadius: "6px",
         position: "relative",
         ":after": {

@@ -7,8 +7,16 @@ declare module "@mui/material/Button" {
 }
 
 export const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#ff8087",
+    },
+    secondary: {
+      main: "#81d1e5",
+    },
+  },
   typography: {
-    fontFamily: ["Quicksand", "Hensa"].join(","),
+    fontFamily: ["Quicksand", "SVN-Arsilon", "Hensa"].join(","),
   },
   components: {
     MuiButton: {
@@ -20,7 +28,7 @@ export const theme = createTheme({
             backgroundColor: "#ff8087",
             color: "white",
             borderRadius: "50px",
-
+            textTransform: "none",
             ":hover": {
               backgroundColor: "#57c1db",
             },
@@ -43,6 +51,7 @@ export const theme = createTheme({
             backgroundColor: "#81d1e5",
             color: "white",
             borderRadius: "50px",
+            textTransform: "none",
             ":hover": {
               backgroundColor: "#57c1db",
             },

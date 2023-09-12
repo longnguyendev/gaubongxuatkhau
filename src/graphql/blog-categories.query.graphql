@@ -1,0 +1,11 @@
+query BlogCategories(
+  $pagination: PaginationArg
+  $filters: BlogCategoryFiltersInput
+  $sort: [String]
+) {
+  blogCategories(pagination: $pagination, filters: $filters, sort: $sort) {
+    data {
+      ...BlogCategory
+    }
+  }
+}

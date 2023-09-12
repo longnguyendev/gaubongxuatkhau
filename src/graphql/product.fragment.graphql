@@ -1,0 +1,24 @@
+fragment Product on ProductEntity {
+  id
+  attributes {
+    slug
+    name
+    price
+    description
+    promotion
+    product_categories {
+      data {
+        id
+        attributes {
+          name
+          slug
+        }
+      }
+    }
+    image {
+      data {
+        ...Image
+      }
+    }
+  }
+}

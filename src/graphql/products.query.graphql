@@ -1,0 +1,17 @@
+query Products(
+  $pagination: PaginationArg
+  $filters: ProductFiltersInput
+  $sort: [String]
+) {
+  products(pagination: $pagination, filters: $filters, sort: $sort) {
+    data {
+      ...Product
+    }
+    meta {
+      pagination {
+        page
+        pageCount
+      }
+    }
+  }
+}

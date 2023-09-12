@@ -3,47 +3,99 @@ import {
   Card,
   CardActionArea,
   CardContent,
-  CardMedia,
+  Stack,
   Typography,
 } from "@mui/material";
 
 import { Link } from "./Link";
+import { WatchLater } from "@mui/icons-material";
+import Image from "next/image";
 
-export interface BlogProps {
-  id: number;
+export interface BlogCardProps {
+  slug: string;
   title: string;
   image: string;
+  createAt: string;
 }
 
-export function BlogCard({ id, title, image }: BlogProps) {
+export function BlogCard({ slug, title, image, createAt }: BlogCardProps) {
   return (
-    <Card sx={{ borderRadius: "6px" }}>
-      <CardActionArea LinkComponent={Link} href={`/blog/${id}`}>
-        <Box position="relative">
-          <CardMedia component="img" width="100%" image={image} alt={image} />
+    <>
+      <Card
+        variant="outlined"
+        sx={{
+          borderRadius: "6px",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <CardActionArea
+          LinkComponent={Link}
+          href={`/blog/${slug}`}
+          sx={{ display: "flex", flexDirection: "column", flex: 1 }}
+        >
           <Box
-            position="absolute"
+            position="relative"
+            width="100%"
             sx={{
-              inset: "10px",
-              border: "2px dashed #fff",
-              borderRadius: "6px",
+              aspectRatio: 1,
             }}
-          ></Box>
-        </Box>
-        <CardContent>
-          <Typography
-            gutterBottom
-            variant="h5"
-            component="div"
-            textAlign="left"
-            fontWeight={700}
-            fontSize="27px"
-            color="#545454"
           >
-            {title}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+            <Image
+              alt={title}
+              src={image}
+              fill
+              priority
+              sizes="100vw"
+              style={{
+                objectFit: "cover",
+              }}
+            />
+            <Box
+              position="absolute"
+              sx={{
+                inset: "10px",
+                border: "2px dashed #fff",
+                borderRadius: "6px",
+              }}
+            />
+          </Box>
+          <CardContent
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              width: "100%",
+              flex: 1,
+            }}
+          >
+            <Typography
+              textAlign="left"
+              fontWeight={700}
+              fontSize="27px"
+              color="#545454"
+              sx={{
+                display: "-webkit-box",
+                overflow: "hidden",
+                WebkitBoxOrient: "vertical",
+                WebkitLineClamp: 3,
+              }}
+            >
+              {title}
+            </Typography>
+            <Stack direction="row" spacing={0.5} alignItems="center">
+              <WatchLater fontSize="small" color="disabled" />
+              <Typography fontSize="15px">
+                {new Date(Date.parse(createAt)).toLocaleDateString("us-UK", {
+                  month: "long",
+                  day: "numeric",
+                  year: "numeric",
+                })}
+              </Typography>
+            </Stack>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </>
   );
 }

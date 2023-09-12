@@ -1,21 +1,62 @@
-import { Box, Button, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  SxProps,
+  Theme,
+  Typography,
+  keyframes,
+  useMediaQuery,
+} from "@mui/material";
+import { Link } from "./Link";
+import Image from "next/image";
+
+const moveWave = keyframes`
+0% {
+  transform: translateX(0) translateZ(0) scaleY(1);
+}
+50% {
+  transform: translateX(-25%) translateZ(0) scaleY(0.55);
+}
+100% {
+  transform: translateX(-50%) translateZ(0) scaleY(1);
+}
+`;
+
+const baseStyle: SxProps<Theme> = {
+  position: "absolute",
+  left: 0,
+  width: "200%",
+  height: "100%",
+  backgroundRepeat: "repeat no-repeat",
+  backgroundPosition: "0 bottom",
+  transformOrigin: "center bottom",
+};
 
 export function BannerTop() {
+  const isSm = useMediaQuery((theme: Theme) => theme.breakpoints.up("sm"));
+
   return (
     <Box
       sx={{
         overflow: "hidden",
         position: "relative",
-        backgroundImage: "url(/test-baby-hero2.jpg)",
-        backgroundSize: "cover",
-        objectFit: "cover",
-        height: "90vh",
-        backgroundPosition: "top center",
+        height: `calc(100vh - ${isSm ? 100 : 70}px)`,
+        width: "100%",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
       }}
     >
+      <Image
+        alt="BannerTop"
+        src="/fluffy-toy-texture-close-up.jpg"
+        fill
+        priority
+        sizes="100vw"
+        style={{
+          objectFit: "cover",
+        }}
+      />
       <Box
         sx={{
           display: "flex",
@@ -35,26 +76,32 @@ export function BannerTop() {
         </Typography>
         <Typography
           sx={{
-            color: "#fff",
+            color: "white",
             fontSize: "36px",
             fontWeight: 700,
+            marginBottom: "35px",
           }}
         >
           Your Paradise
         </Typography>
         <Box>
           <Button
+            LinkComponent={Link}
+            href="/shop"
             variant="dashed"
+            aria-label="go to shop"
             sx={{ py: "14px", px: "20px", fontWeight: 700, mr: 1 }}
           >
-            Shop Girls
+            Thú Bông
           </Button>
           <Button
+            LinkComponent={Link}
+            href="/shop"
             variant="dashed"
             color="secondary"
             sx={{ py: "14px", px: "20px", fontWeight: 700 }}
           >
-            Shop Boys
+            Gấu Bông
           </Button>
         </Box>
       </Box>
@@ -69,46 +116,28 @@ export function BannerTop() {
       >
         <Box
           sx={{
+            ...baseStyle,
             backgroundSize: "50% 100px",
             backgroundImage: "url(/wave-bot.png)",
-            position: "absolute",
-            left: 0,
-            width: "200%",
-            height: "100%",
-            backgroundRepeat: "repeat no-repeat",
-            backgroundPosition: "0 bottom",
-            transformOrigin: "center bottom",
             zIndex: 5,
-            animation: "move-wave 15s linear infinite",
+            animation: `${moveWave} 15s linear infinite`,
           }}
         ></Box>
         <Box
           sx={{
+            ...baseStyle,
             backgroundSize: "50% 120px",
             backgroundImage: "url(/wave-mid.png)",
-            position: "absolute",
-            left: 0,
-            width: "200%",
-            height: "100%",
-            backgroundRepeat: "repeat no-repeat",
-            backgroundPosition: "0 bottom",
-            transformOrigin: "center bottom",
             zIndex: 10,
             opacity: 0.75,
-            animation: "move-wave 10s linear infinite",
+            animation: `${moveWave} 10s linear infinite`,
           }}
         ></Box>
         <Box
           sx={{
+            ...baseStyle,
             backgroundSize: "50% 100px",
             backgroundImage: "url(/wave-top.png)",
-            position: "absolute",
-            left: 0,
-            width: "200%",
-            height: "100%",
-            backgroundRepeat: "repeat no-repeat",
-            backgroundPosition: "0 bottom",
-            transformOrigin: "center bottom",
             zIndex: 15,
             opacity: 0.5,
             animationDelay: "1s",

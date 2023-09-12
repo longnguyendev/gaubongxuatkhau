@@ -1,23 +1,21 @@
-import {
-  Box,
-  Card,
-  CardActionArea,
-  CardMedia,
-  Typography,
-} from "@mui/material";
+import { Box, Card, CardActionArea, Stack, Typography } from "@mui/material";
 
-export interface CategoryCardCardProps {
-  id: number;
-  title: string;
+import { Link } from "./Link";
+import Image from "next/image";
+
+export interface CategoryCardProps {
+  slug: string;
+  name: string;
   image: string;
-  type: string;
 }
 
-export function CategoryCard({ title, image, type }: CategoryCardCardProps) {
+export function CategoryCard({ slug, name, image }: CategoryCardProps) {
   return (
     <>
       <Card>
         <CardActionArea
+          LinkComponent={Link}
+          href={`/shop?category=${slug}`}
           sx={{
             position: "relative",
             ":after": {
@@ -28,40 +26,47 @@ export function CategoryCard({ title, image, type }: CategoryCardCardProps) {
               borderRadius: "6px",
             },
             ":hover": {
-              ".MuiCardMedia-root": {
+              ".MuiBox-root": {
                 transform: "scale(1.1)",
               },
             },
           }}
         >
-          <CardMedia
-            component="img"
-            width="100%"
-            image={image}
-            alt={image}
-            sx={{ transition: "0.2s ease-in" }}
-          />
           <Box
+            width="100%"
+            sx={{
+              aspectRatio: 2 / 3,
+              transition: "0.2s ease-in",
+            }}
+          >
+            <Image
+              alt={name}
+              src={image}
+              fill
+              priority
+              sizes="100vw"
+              style={{
+                objectFit: "cover",
+              }}
+            />
+          </Box>
+          <Stack
+            direction="column"
             position="absolute"
-            sx={{ bottom: "10%", left: "7%", right: "7%" }}
+            sx={{ bottom: "20%", left: "10px", right: "10px" }}
           >
             <Typography
-              fontSize="40px"
-              fontFamily="Hensa"
-              color="#fff"
-              sx={{ textShadow: "0px 0px 6px rgba(0,0,0,.2)" }}
+              fontSize="45px"
+              lineHeight="45px"
+              fontFamily="SVN-Arsilon"
+              textAlign="center"
+              color="white"
+              fontWeight={500}
+              sx={{ textShadow: "2px 2px 6px rgba(0,0,0,1)" }}
             >
-              {title}
+              {name}
             </Typography>
-            <Typography
-              color="#fff"
-              fontSize="20px"
-              fontWeight="700"
-              sx={{ wordWrap: "break-word" }}
-            >
-              {type}
-            </Typography>
-          </Box>
+          </Stack>
         </CardActionArea>
       </Card>
     </>

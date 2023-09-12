@@ -1,38 +1,46 @@
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Box, Button, CardActionArea, Stack } from "@mui/material";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 import { Link } from "./Link";
+import { useCart } from "@/hooks";
 
 export interface ProductCardProps {
-  id: number;
+  id: string;
+  slug: string;
   name: string;
   image: string;
   price: number;
-  promotion?: number;
+  promotion?: number | null;
 }
 
 export function ProductCard({
+  id,
   name,
   image,
   price,
   promotion,
-  id,
+  slug,
 }: ProductCardProps) {
+  const { onAdd } = useCart();
   return (
     <Card
+      variant="outlined"
       sx={{
-        textAlign: "center",
+        display: "flex",
+        flexDirection: "column",
         borderRadius: "6px",
         maxWidth: "100%",
+        minHeight: "100%",
         position: "relative",
         ":hover": {
-          ".MuiBox-root": {
+          ".MuiButton-root": {
             opacity: 1,
             bottom: "50%",
-            transform: "translateY(50%)",
+            transform: "translate(-50%, 50%)",
           },
         },
         ...(promotion && {
@@ -44,7 +52,7 @@ export function ProductCard({
             lineHeight: "40px",
             background: "#ff8087",
             borderRadius: "50%",
-            color: "#fff",
+            color: "white",
             fontSize: "12px",
             textAlign: "center",
             top: "20px",
@@ -53,21 +61,57 @@ export function ProductCard({
           },
         }),
       }}
+      component={motion.div}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5 }}
     >
-      <CardActionArea LinkComponent={Link} href={`/shop/${id}`}>
-        <CardMedia
-          component="img"
-          height="100%"
-          image={image}
-          alt={name}
-          sx={{ position: "relative" }}
-        />
-        <CardContent>
+      <CardActionArea
+        LinkComponent={Link}
+        href={`/shop/${slug}`}
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          flex: 1,
+          justifyContent: "flex-end",
+        }}
+      >
+        <Box
+          position="relative"
+          width="100%"
+          sx={{
+            aspectRatio: 1,
+          }}
+        >
+          <Image
+            alt={name}
+            src={image}
+            fill
+            sizes="100vw"
+            style={{
+              objectFit: "cover",
+            }}
+          />
+        </Box>
+        <CardContent
+          sx={{
+            display: "flex",
+            flex: 1,
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}
+        >
           <Typography
             gutterBottom
-            variant="h5"
             textAlign="center"
             fontWeight="bold"
+            sx={{
+              display: "-webkit-box",
+              overflow: "hidden",
+              WebkitBoxOrient: "vertical",
+              WebkitLineClamp: 2,
+            }}
           >
             {name}
           </Typography>
@@ -79,34 +123,39 @@ export function ProductCard({
           >
             {promotion && (
               <Typography
+                fontSize="17px"
                 color="#999"
                 fontWeight="bold"
                 sx={{ textDecoration: "line-through" }}
               >
-                {price.toLocaleString()}
+                {price.toLocaleString("de-DE")}
               </Typography>
             )}
             <Typography fontSize="17px" color="#81d1e5" fontWeight={700}>
               {promotion
-                ? (price - (price * promotion) / 100).toLocaleString()
-                : price.toLocaleString()}
+                ? (price - (price * promotion) / 100).toLocaleString("de-DE")
+                : price.toLocaleString("de-DE")}
             </Typography>
           </Stack>
         </CardContent>
       </CardActionArea>
-      <Box
+      <Button
+        variant="dashed"
+        aria-label="add to cart"
         sx={{
-          opacity: 0,
           position: "absolute",
-          bottom: "30%",
-          left: 0,
-          right: 0,
+          bottom: "40%",
+          left: "50%",
+          transform: "translateX(-50%)",
           zIndex: 1,
+          opacity: 0,
           transition: "0.2s",
+          whiteSpace: "nowrap",
         }}
+        onClick={() => onAdd(id)}
       >
-        <Button variant="dashed">Add to cart</Button>
-      </Box>
+        Add to cart
+      </Button>
     </Card>
   );
 }

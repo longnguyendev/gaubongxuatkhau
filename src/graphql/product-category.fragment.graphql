@@ -1,0 +1,12 @@
+fragment ProductCategory on ProductCategoryEntity {
+  id
+  attributes {
+    slug
+    name
+    image {
+      data {
+        ...Image
+      }
+    }
+  }
+}

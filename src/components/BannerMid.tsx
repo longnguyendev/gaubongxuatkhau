@@ -1,4 +1,6 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
+import { motion } from "framer-motion";
+import { Link } from "./Link";
 
 export function BannerMid() {
   return (
@@ -11,9 +13,9 @@ export function BannerMid() {
             justifyContent: "center",
             backgroundImage: "url(/back-dark-blue-section.jpg)",
             width: "100%",
-            height: "600px  ",
+            height: "600px",
             backgroundSize: "cover",
-            backgroundPosition: "cennter center",
+            backgroundPosition: "center center",
           }}
         >
           <Box
@@ -27,25 +29,33 @@ export function BannerMid() {
               BACK TO SCHOOL
             </Typography>
             <Typography
+              component={motion.div}
+              initial={{ scale: 0.3 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5 }}
               variant="h3"
               fontFamily="Hensa"
-              color="#fff"
+              color="white"
               fontSize="72px"
             >
               Girls Collection
             </Typography>
-            <Typography color="#fff" fontSize="19px" fontWeight={500}>
+            <Typography color="white" fontSize="19px" fontWeight={500}>
               We celebrate childhood by supporting babies, children, and
               families
             </Typography>
-            <Typography color="#fff" fontSize="19px" fontWeight={500}>
+            <Typography color="white" fontSize="19px" fontWeight={500}>
               with thoughtful designs, quality materials and construction,
             </Typography>
-            <Typography color="#fff" fontSize="19px" fontWeight={500}>
+            <Typography color="white" fontSize="19px" fontWeight={500}>
               and convenient shopping options.
             </Typography>
             <Button
+              LinkComponent={Link}
+              href="/shop"
               variant="dashed"
+              aria-label="go to shop"
               sx={{ padding: "14px 20px", marginTop: "50px", fontWeight: 700 }}
             >
               Shop Collection

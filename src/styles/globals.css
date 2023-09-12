@@ -18,21 +18,79 @@ input[type="number"] {
 @font-face {
   font-family: "Hensa";
   src: url("../../public/Hensa.otf");
-  /* Nếu bạn có nhiều định dạng font, bạn có thể liệt kê chúng ở đây */
+  font-display: swap;
 }
+
+@font-face {
+  font-family: "SVN-Arsilon";
+  src: url("../../public/SVN-Arsilon.otf");
+  font-display: swap;
+}
+
 @font-face {
   font-family: "Quicksand";
   src: url("../../public/Quicksand-VariableFont_wght.ttf");
-  /* Nếu bạn có nhiều định dạng font, bạn có thể liệt kê chúng ở đây */
+  font-display: swap;
 }
-@keyframes move-wave {
+.carouselInfinite {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+@-webkit-keyframes scroll {
   0% {
-    transform: translateX(0) translateZ(0) scaleY(1);
-  }
-  50% {
-    transform: translateX(-25%) translateZ(0) scaleY(0.55);
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%) translateZ(0) scaleY(1);
+    transform: translateX(calc(-250px * 14));
   }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 14));
+  }
+}
+.slider {
+  background: white;
+  mix-blend-mode: darken;
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+}
+.slider::before,
+.slider::after {
+  background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 200px;
+  z-index: 2;
+}
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+.slider::before {
+  left: 0;
+  top: 0;
+}
+.slider .slide-track {
+  -webkit-animation: scroll 80s linear infinite;
+  animation: scroll 80s linear infinite;
+  display: flex;
+  width: calc(250px * 28);
+}
+.slider .slide {
+  height: 100px;
+  width: 250px;
+  position: relative;
+  margin: 0 10px;
 }
