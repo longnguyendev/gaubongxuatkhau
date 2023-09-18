@@ -300,7 +300,12 @@ export function Header(props: HeaderProps) {
             TransitionComponent={Transition}
           >
             <IconButton
-              sx={{ position: "absolute", right: "10px", top: "10px" }}
+              sx={{
+                position: "absolute",
+                right: "10px",
+                top: "10px",
+                zIndex: 9999,
+              }}
               edge="start"
               color="inherit"
               onClick={handleClose}
