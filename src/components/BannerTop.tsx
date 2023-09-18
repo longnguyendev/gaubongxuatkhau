@@ -76,6 +76,7 @@ export function BannerTop() {
         </Typography>
         <Typography
           sx={{
+            position: "relative",
             color: "white",
             fontSize: "36px",
             fontWeight: 700,

@@ -154,7 +154,7 @@ export default function ShopPage() {
 
   return (
     <>
-      <PageTitle title="VinaTeddy Shop">
+      <PageTitle title="Gấu Bông Xuất Khẩu Shop">
         <Typography fontSize="18px" color="#49a3b9" fontWeight={700}>
           {`We’ve picked few topics we’re pretty sure you’ll ❤ to read about. Check back often and enjoy.`}
         </Typography>
@@ -206,7 +206,7 @@ export default function ShopPage() {
                           borderRadius: "unset",
                         }}
                         alt={product.attributes?.name}
-                        src={`http://127.0.0.1:1337${
+                        src={`https://api.gaubongxuatkhau.com${
                           product.attributes?.image?.data?.[0].attributes
                             ?.formats.thumbnail.url ?? ""
                         }`}
@@ -259,7 +259,7 @@ export default function ShopPage() {
                   key={category.id}
                   slug={category.attributes?.slug ?? ""}
                   name={category.attributes?.name ?? ""}
-                  image={`http://127.0.0.1:1337${
+                  image={`https://api.gaubongxuatkhau.com${
                     category.attributes?.image?.data?.attributes?.url ?? ""
                   }`}
                 />
@@ -300,12 +300,12 @@ export default function ShopPage() {
             <Grid container spacing={4}>
               {productData?.pages.map((page) =>
                 page.products?.data.map((product) => (
-                  <Grid key={product.id} item xs={12} sm={6} md={3}>
+                  <Grid key={product.id} item xs={6} md={3}>
                     <ProductCard
                       id={product.id ?? ""}
                       slug={product.attributes?.slug ?? ""}
                       name={product.attributes?.name ?? ""}
-                      image={`http://127.0.0.1:1337${
+                      image={`https://api.gaubongxuatkhau.com${
                         product.attributes?.image?.data?.[0].attributes?.url ??
                         ""
                       }`}

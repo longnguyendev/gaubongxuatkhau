@@ -86,7 +86,7 @@ export default function BlogPage() {
 
   return (
     <>
-      <PageTitle title="VinaTeddy Blog">
+      <PageTitle title="Gấu Bông Xuất Khẩu Blog">
         <Typography fontSize="18px" color="#49a3b9" fontWeight={700}>
           {`We’ve picked few topics we’re pretty sure you’ll ❤ to read about. Check back often and enjoy.`}
         </Typography>
@@ -144,7 +144,7 @@ export default function BlogPage() {
                           borderRadius="50%"
                           marginRight="20px"
                           sx={{
-                            backgroundImage: `url(http://127.0.0.1:1337${
+                            backgroundImage: `url(https://api.gaubongxuatkhau.com${
                               post.attributes?.image?.data?.attributes?.formats
                                 .thumbnail.url ?? ""
                             })`,
@@ -198,7 +198,7 @@ export default function BlogPage() {
                         ""
                       ) ?? ""
                     }
-                    image={`http://127.0.0.1:1337${
+                    image={`https://api.gaubongxuatkhau.com${
                       blog.attributes?.image?.data?.attributes?.url ?? ""
                     }`}
                     categoryBlogSlug={

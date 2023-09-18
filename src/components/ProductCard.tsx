@@ -143,6 +143,8 @@ export function ProductCard({
         variant="dashed"
         aria-label="add to cart"
         sx={{
+          width: "60%",
+          height: "48px",
           position: "absolute",
           bottom: "40%",
           left: "50%",

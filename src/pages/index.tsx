@@ -33,17 +33,17 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>VinaTeddy Home</title>
+        <title>Gấu Bông Xuất Khẩu Home</title>
         <meta
           name="description"
-          content="vinateddy.vn là đơn vị cung cấp gấu bông, thú bông số lượng lớn, nhận làm các mẫu gấu bông theo yêu cầu, order hàng toàn quốc. Hơn nữa, vinateddy có thể xuất sỉ hàng toàn quốc nhanh chóng và tối ưu chi phí nhất"
+          content="gaubongxuatkhau.com là đơn vị cung cấp gấu bông, thú bông số lượng lớn, nhận làm các mẫu gấu bông theo yêu cầu, order hàng toàn quốc. Hơn nữa, gaubongxuatkhau có thể xuất sỉ hàng toàn quốc nhanh chóng và tối ưu chi phí nhất"
         />
         <meta
           name="keywords"
           content="gấu bông, gấu bông giá sỉ, gấu bông giá rẽ, xưởng gấu bông, teddy, teddy bear, thú bông, đại lý gấu bông"
         />
         <meta name="robots" content="index, follow" />
-        <base href="http://localhost:3000" />
+        {/* <base href="http://localhost:3000" /> */}
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <BannerTop />
@@ -73,7 +73,7 @@ export default function Home() {
                     id={product.id ?? ""}
                     slug={product.attributes?.slug ?? ""}
                     name={product.attributes?.name ?? ""}
-                    image={`http://127.0.0.1:1337${
+                    image={`https://api.gaubongxuatkhau.com${
                       product.attributes?.image?.data?.[0].attributes?.url ?? ""
                     }`}
                     price={product.attributes?.price ?? 0}
@@ -121,7 +121,7 @@ export default function Home() {
                   key={blog.id}
                   slug={blog.attributes?.slug ?? ""}
                   title={blog.attributes?.title ?? ""}
-                  image={`http://127.0.0.1:1337${blog.attributes?.image?.data?.attributes?.url}`}
+                  image={`https://api.gaubongxuatkhau.com${blog.attributes?.image?.data?.attributes?.url}`}
                   createAt={blog.attributes?.createdAt}
                 />
               ))}
@@ -157,5 +157,5 @@ export const getStaticProps = getStaticPropsFunc(async ({ queryClient }) => {
     useBlogsQuery.fetcher(blogVariables)
   );
 
-  return { a: 1 };
+  return {};
 });

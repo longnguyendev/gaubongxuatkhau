@@ -57,7 +57,7 @@ export default function BlogDetailPage() {
         <Box padding="60px 0">
           <Box
             component="img"
-            src={`http://127.0.0.1:1337${data?.blogs?.data?.[0]?.attributes?.image?.data?.attributes?.url}`}
+            src={`https://api.gaubongxuatkhau.com${data?.blogs?.data?.[0]?.attributes?.image?.data?.attributes?.url}`}
             width="100%"
             sx={{ borderRadius: "6px" }}
           />
@@ -74,7 +74,7 @@ export default function BlogDetailPage() {
           >
             {data?.blogs?.data?.[0]?.attributes?.content?.replaceAll(
               "/uploads",
-              "http://127.0.0.1:1337/uploads"
+              "https://api.gaubongxuatkhau.com/uploads"
             ) ?? ""}
           </Box>
         </Box>
@@ -95,7 +95,7 @@ export const getStaticPaths = getStaticPathsFunc(async ({ queryClient }) => {
         slug: blog.attributes?.slug ?? "",
       },
     })),
-    fallback: false,
+    fallback: true,
   };
 });
 
@@ -108,7 +108,7 @@ export const getStaticProps = getStaticPropsFunc(
         },
       },
     };
-    
+
     await queryClient.prefetchQuery(
       useBlogsQuery.getKey(blogVariables),
       useBlogsQuery.fetcher(blogVariables)

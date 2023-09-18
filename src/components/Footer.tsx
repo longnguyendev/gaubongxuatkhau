@@ -11,6 +11,7 @@ import {
   Stack,
   Typography,
   Divider,
+  ListItem,
 } from "@mui/material";
 
 import {
@@ -125,41 +126,52 @@ export function Footer() {
               Information
             </Typography>
             <List>
-              <ListItemButton
-                LinkComponent={Link}
-                href={"/about"}
-                sx={linkButtonStyle}
-              >
-                About Us
-              </ListItemButton>
-              <ListItemButton
-                LinkComponent={Link}
-                href={"/contact"}
-                sx={linkButtonStyle}
-              >
-                Contacts
-              </ListItemButton>
-              <ListItemButton
-                LinkComponent={Link}
-                href={"/faq"}
-                sx={linkButtonStyle}
-              >
-                FAQ
-              </ListItemButton>
-              <ListItemButton
-                LinkComponent={Link}
-                href={"/shop"}
-                sx={linkButtonStyle}
-              >
-                VinaTeddy Shop
-              </ListItemButton>
-              <ListItemButton
-                LinkComponent={Link}
-                href={"/blog"}
-                sx={linkButtonStyle}
-              >
-                VinaTeddy Blog
-              </ListItemButton>
+              <ListItem>
+                {" "}
+                <ListItemButton
+                  LinkComponent={Link}
+                  href={"/about"}
+                  sx={linkButtonStyle}
+                >
+                  About Us
+                </ListItemButton>
+              </ListItem>
+              <ListItem>
+                <ListItemButton
+                  LinkComponent={Link}
+                  href={"/contact"}
+                  sx={linkButtonStyle}
+                >
+                  Contacts
+                </ListItemButton>
+              </ListItem>
+              <ListItem>
+                <ListItemButton
+                  LinkComponent={Link}
+                  href={"/faq"}
+                  sx={linkButtonStyle}
+                >
+                  FAQ
+                </ListItemButton>
+              </ListItem>
+              <ListItem>
+                <ListItemButton
+                  LinkComponent={Link}
+                  href={"/shop"}
+                  sx={linkButtonStyle}
+                >
+                  Gấu Bông Xuất Khẩu Shop
+                </ListItemButton>
+              </ListItem>
+              <ListItem>
+                <ListItemButton
+                  LinkComponent={Link}
+                  href={"/blog"}
+                  sx={linkButtonStyle}
+                >
+                  Gấu Bông Xuất Khẩu Blog
+                </ListItemButton>
+              </ListItem>
             </List>
           </Grid>
           <Grid item xs={12} md={6}>
@@ -167,60 +179,70 @@ export function Footer() {
               Have a Question?
             </Typography>
             <List>
-              <ListItemButton
-                LinkComponent={Link}
-                href={"/about"}
-                sx={linkButtonStyle}
-              >
-                <Stack spacing={2} direction="row">
-                  <AccessTimeFilled />
-                  <Typography>Mon. - Fri.: 09:00 - 18:30</Typography>
-                </Stack>
-              </ListItemButton>
-              <ListItemButton
-                LinkComponent={Link}
-                href={"/about"}
-                sx={linkButtonStyle}
-              >
-                <Stack spacing={2} direction="row">
-                  <LocationOn />
-                  <Typography>
-                    123/4 Đường số 8, Phường Linh Xuân, Tp. Thủ Đức, Tp.Hcm
-                  </Typography>
-                </Stack>
-              </ListItemButton>
-              <ListItemButton
-                LinkComponent={Link}
-                href={"/about"}
-                sx={linkButtonStyle}
-              >
-                <Stack spacing={2} direction="row">
-                  <PhoneEnabled />
-                  <Typography>0902983005</Typography>
-                </Stack>
-              </ListItemButton>
-              <ListItemButton
-                LinkComponent={Link}
-                href={"/about"}
-                sx={linkButtonStyle}
-              >
-                <Stack spacing={2} direction="row">
-                  <Email />
-                  <Typography>cs.vinateddy@gmail.com</Typography>
-                </Stack>
-              </ListItemButton>
-              <ListItemButton
-                LinkComponent={Link}
-                href={"/about"}
-                sx={linkButtonStyle}
-              >
-                <Stack spacing={2} direction="row">
-                  <AccountBalance />
-                  <Typography>
-                    STK: 8888.22.8668 - Ngân Hàng Á Châu ACB
-                  </Typography>
-                </Stack>
-              </ListItemButton>
+              <ListItem>
+                <ListItemButton
+                  LinkComponent={Link}
+                  href={"/about"}
+                  sx={linkButtonStyle}
+                >
+                  <Stack spacing={2} direction="row">
+                    <AccessTimeFilled />
+                    <Typography>Mon. - Fri.: 09:00 - 18:30</Typography>
+                  </Stack>
+                </ListItemButton>
+              </ListItem>
+              <ListItem>
+                <ListItemButton
+                  LinkComponent={Link}
+                  href={"/about"}
+                  sx={linkButtonStyle}
+                >
+                  <Stack spacing={2} direction="row">
+                    <LocationOn />
+                    <Typography>
+                      123/4 Đường số 8, Phường Linh Xuân, Tp. Thủ Đức, Tp.Hcm
+                    </Typography>
+                  </Stack>
+                </ListItemButton>
+              </ListItem>
+              <ListItem>
+                <ListItemButton
+                  LinkComponent={Link}
+                  href={"/about"}
+                  sx={linkButtonStyle}
+                >
+                  <Stack spacing={2} direction="row">
+                    <PhoneEnabled />
+                    <Typography>0902983005</Typography>
+                  </Stack>
+                </ListItemButton>
+              </ListItem>
+              <ListItem>
+                <ListItemButton
+                  LinkComponent={Link}
+                  href={"/about"}
+                  sx={linkButtonStyle}
+                >
+                  <Stack spacing={2} direction="row">
+                    <Email />
+                    <Typography>cs.gaubongxuatkhau@gmail.com</Typography>
+                  </Stack>
+                </ListItemButton>
+              </ListItem>
+              <ListItem>
+                <ListItemButton
+                  LinkComponent={Link}
+                  href={"/about"}
+                  sx={linkButtonStyle}
+                >
+                  <Stack spacing={2} direction="row">
+                    <AccountBalance />
+                    <Typography>
+                      STK: 8888.22.8668 - Ngân Hàng Á Châu ACB
+                    </Typography>
+                  </Stack>
+                </ListItemButton>
+              </ListItem>
             </List>
           </Grid>
           <Grid item xs={12} md={3}>
@@ -252,10 +274,18 @@ export function Footer() {
               href="https://www.facebook.com/cuahanggaubong"
               target="_blank"
               sx={iconButtonStyle}
+              aria-label="facebook page"
             >
               <FacebookOutlined />
             </IconButton>
-            <IconButton sx={iconButtonStyle}>
+
+            <IconButton
+              LinkComponent={Link}
+              href="#"
+              target="_blank"
+              sx={iconButtonStyle}
+              aria-label="Twitter page"
+            >
               <Twitter />
             </IconButton>
           </Stack>

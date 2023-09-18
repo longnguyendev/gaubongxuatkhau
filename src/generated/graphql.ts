@@ -9,7 +9,7 @@ export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' |
 
 function fetcher<TData, TVariables>(query: string, variables?: TVariables) {
   return async (): Promise<TData> => {
-    const res = await fetch("http://127.0.0.1:1337/graphql", {
+    const res = await fetch("https://api.gaubongxuatkhau.com/graphql", {
     method: "POST",
     ...({"headers":{"Content-Type":"application/json"}}),
       body: JSON.stringify({ query, variables }),
@@ -56,7 +56,6 @@ export type BlogCategory = {
   blogs?: Maybe<BlogRelationResponseCollection>;
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   name: Scalars['String']['output'];
-  publishedAt?: Maybe<Scalars['DateTime']['output']>;
   slug: Scalars['String']['output'];
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
@@ -94,7 +93,6 @@ export type BlogCategoryFiltersInput = {
   name?: InputMaybe<StringFilterInput>;
   not?: InputMaybe<BlogCategoryFiltersInput>;
   or?: InputMaybe<Array<InputMaybe<BlogCategoryFiltersInput>>>;
-  publishedAt?: InputMaybe<DateTimeFilterInput>;
   slug?: InputMaybe<StringFilterInput>;
   updatedAt?: InputMaybe<DateTimeFilterInput>;
 };
@@ -102,7 +100,6 @@ export type BlogCategoryFiltersInput = {
 export type BlogCategoryInput = {
   blogs?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
   name?: InputMaybe<Scalars['String']['input']>;
-  publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
   slug?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -839,7 +836,6 @@ export type QueryBlogArgs = {
 export type QueryBlogCategoriesArgs = {
   filters?: InputMaybe<BlogCategoryFiltersInput>;
   pagination?: InputMaybe<PaginationArg>;
-  publicationState?: InputMaybe<PublicationState>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 

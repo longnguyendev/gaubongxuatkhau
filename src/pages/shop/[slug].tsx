@@ -70,7 +70,7 @@ export default function ShopDetailPage() {
             <Box
               component="img"
               width="100%"
-              src={`http://127.0.0.1:1337${data?.products?.data?.[0]?.attributes?.image.data?.[0].attributes?.url}`}
+              src={`https://api.gaubongxuatkhau.com${data?.products?.data?.[0]?.attributes?.image.data?.[0].attributes?.url}`}
               alt={data?.products?.data?.[0]?.attributes?.name}
               onClick={handleOpen}
             />
@@ -82,7 +82,7 @@ export default function ShopDetailPage() {
             >
               <Box
                 component="img"
-                src={`http://127.0.0.1:1337${data?.products?.data?.[0]?.attributes?.image.data?.[0].attributes?.url}`}
+                src={`https://api.gaubongxuatkhau.com${data?.products?.data?.[0]?.attributes?.image.data?.[0].attributes?.url}`}
                 alt={data?.products?.data?.[0]?.attributes?.name}
                 sx={{
                   position: "absolute",
@@ -245,7 +245,7 @@ export const getStaticPaths = getStaticPathsFunc(async ({ queryClient }) => {
         slug: propduct.attributes?.slug ?? "",
       },
     })),
-    fallback: false,
+    fallback: true,
   };
 });
 
