@@ -73,7 +73,7 @@ export default function Home() {
                     id={product.id ?? ""}
                     slug={product.attributes?.slug ?? ""}
                     name={product.attributes?.name ?? ""}
-                    image={`https://api.gaubongxuatkhau.com${
+                    image={`https://api.gaubongthuonghieu.com${
                       product.attributes?.image?.data?.[0].attributes?.url ?? ""
                     }`}
                     price={product.attributes?.price ?? 0}
@@ -121,7 +121,7 @@ export default function Home() {
                   key={blog.id}
                   slug={blog.attributes?.slug ?? ""}
                   title={blog.attributes?.title ?? ""}
-                  image={`https://api.gaubongxuatkhau.com${blog.attributes?.image?.data?.attributes?.url}`}
+                  image={`https://api.gaubongthuonghieu.com${blog.attributes?.image?.data?.attributes?.url}`}
                   createAt={blog.attributes?.createdAt}
                 />
               ))}

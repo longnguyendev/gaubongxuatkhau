@@ -57,7 +57,7 @@ export default function BlogDetailPage() {
         <Box padding="60px 0">
           <Box
             component="img"
-            src={`https://api.gaubongxuatkhau.com${data?.blogs?.data?.[0]?.attributes?.image?.data?.attributes?.url}`}
+            src={`https://api.gaubongthuonghieu.com${data?.blogs?.data?.[0]?.attributes?.image?.data?.attributes?.url}`}
             width="100%"
             sx={{ borderRadius: "6px" }}
           />
@@ -74,7 +74,7 @@ export default function BlogDetailPage() {
           >
             {data?.blogs?.data?.[0]?.attributes?.content?.replaceAll(
               "/uploads",
-              "https://api.gaubongxuatkhau.com/uploads"
+              "https://api.gaubongthuonghieu.com/uploads"
             ) ?? ""}
           </Box>
         </Box>

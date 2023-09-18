@@ -70,7 +70,7 @@ export default function ShopDetailPage() {
             <Box
               component="img"
               width="100%"
-              src={`https://api.gaubongxuatkhau.com${data?.products?.data?.[0]?.attributes?.image.data?.[0].attributes?.url}`}
+              src={`https://api.gaubongthuonghieu.com${data?.products?.data?.[0]?.attributes?.image.data?.[0].attributes?.url}`}
               alt={data?.products?.data?.[0]?.attributes?.name}
               onClick={handleOpen}
             />
@@ -82,7 +82,7 @@ export default function ShopDetailPage() {
             >
               <Box
                 component="img"
-                src={`https://api.gaubongxuatkhau.com${data?.products?.data?.[0]?.attributes?.image.data?.[0].attributes?.url}`}
+                src={`https://api.gaubongthuonghieu.com${data?.products?.data?.[0]?.attributes?.image.data?.[0].attributes?.url}`}
                 alt={data?.products?.data?.[0]?.attributes?.name}
                 sx={{
                   position: "absolute",

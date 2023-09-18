@@ -206,7 +206,7 @@ export default function ShopPage() {
                           borderRadius: "unset",
                         }}
                         alt={product.attributes?.name}
-                        src={`https://api.gaubongxuatkhau.com${
+                        src={`https://api.gaubongthuonghieu.com${
                           product.attributes?.image?.data?.[0].attributes
                             ?.formats.thumbnail.url ?? ""
                         }`}
@@ -259,7 +259,7 @@ export default function ShopPage() {
                   key={category.id}
                   slug={category.attributes?.slug ?? ""}
                   name={category.attributes?.name ?? ""}
-                  image={`https://api.gaubongxuatkhau.com${
+                  image={`https://api.gaubongthuonghieu.com${
                     category.attributes?.image?.data?.attributes?.url ?? ""
                   }`}
                 />
@@ -305,7 +305,7 @@ export default function ShopPage() {
                       id={product.id ?? ""}
                       slug={product.attributes?.slug ?? ""}
                       name={product.attributes?.name ?? ""}
-                      image={`https://api.gaubongxuatkhau.com${
+                      image={`https://api.gaubongthuonghieu.com${
                         product.attributes?.image?.data?.[0].attributes?.url ??
                         ""
                       }`}

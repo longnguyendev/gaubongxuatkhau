@@ -346,7 +346,7 @@ export function Header(props: HeaderProps) {
                                 marginRight: "20px",
                                 borderRadius: "unset",
                               }}
-                              src={`https://api.gaubongxuatkhau.com${item.attributes?.image.data?.[0]?.attributes?.formats.thumbnail.url}`}
+                              src={`https://api.gaubongthuonghieu.com${item.attributes?.image.data?.[0]?.attributes?.formats.thumbnail.url}`}
                               alt={"ahihi"}
                             ></Avatar>
                           </ListItemAvatar>

@@ -2,7 +2,7 @@ import type { CodegenConfig } from "@graphql-codegen/cli";
 
 const config: CodegenConfig = {
   overwrite: true,
-  schema: "https://api.gaubongxuatkhau.com/graphql",
+  schema: "https://api.gaubongthuonghieu.com/graphql",
   documents: "src/**/*.graphql",
   generates: {
     "src/generated/graphql.ts": {
@@ -13,7 +13,7 @@ const config: CodegenConfig = {
       ],
       config: {
         fetcher: {
-          endpoint: "https://api.gaubongxuatkhau.com/graphql",
+          endpoint: "https://api.gaubongthuonghieu.com/graphql",
           fetchParams: {
             headers: {
               "Content-Type": "application/json",

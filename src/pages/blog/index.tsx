@@ -144,7 +144,7 @@ export default function BlogPage() {
                           borderRadius="50%"
                           marginRight="20px"
                           sx={{
-                            backgroundImage: `url(https://api.gaubongxuatkhau.com${
+                            backgroundImage: `url(https://api.gaubongthuonghieu.com${
                               post.attributes?.image?.data?.attributes?.formats
                                 .thumbnail.url ?? ""
                             })`,
@@ -198,7 +198,7 @@ export default function BlogPage() {
                         ""
                       ) ?? ""
                     }
-                    image={`https://api.gaubongxuatkhau.com${
+                    image={`https://api.gaubongthuonghieu.com${
                       blog.attributes?.image?.data?.attributes?.url ?? ""
                     }`}
                     categoryBlogSlug={
