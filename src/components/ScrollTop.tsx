@@ -1,10 +1,5 @@
 import { KeyboardArrowUp } from "@mui/icons-material";
-import {
-  Box,
-  Button,
-  Zoom,
-  useScrollTrigger,
-} from "@mui/material";
+import { Box, Button, Zoom, useScrollTrigger } from "@mui/material";
 import { FC, MouseEvent } from "react";
 
 interface ScrollTopProps {

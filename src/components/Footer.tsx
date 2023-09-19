@@ -180,11 +180,7 @@ export function Footer() {
             </Typography>
             <List>
               <ListItem>
-                <ListItemButton
-                  LinkComponent={Link}
-                  href={"/about"}
-                  sx={linkButtonStyle}
-                >
+                <ListItemButton sx={linkButtonStyle}>
                   <Stack spacing={2} direction="row">
                     <AccessTimeFilled />
                     <Typography>Mon. - Fri.: 09:00 - 18:30</Typography>
@@ -192,11 +188,7 @@ export function Footer() {
                 </ListItemButton>
               </ListItem>
               <ListItem>
-                <ListItemButton
-                  LinkComponent={Link}
-                  href={"/about"}
-                  sx={linkButtonStyle}
-                >
+                <ListItemButton sx={linkButtonStyle}>
                   <Stack spacing={2} direction="row">
                     <LocationOn />
                     <Typography>
@@ -206,11 +198,7 @@ export function Footer() {
                 </ListItemButton>
               </ListItem>
               <ListItem>
-                <ListItemButton
-                  LinkComponent={Link}
-                  href={"/about"}
-                  sx={linkButtonStyle}
-                >
+                <ListItemButton sx={linkButtonStyle}>
                   <Stack spacing={2} direction="row">
                     <PhoneEnabled />
                     <Typography>0902983005</Typography>
@@ -218,11 +206,7 @@ export function Footer() {
                 </ListItemButton>
               </ListItem>
               <ListItem>
-                <ListItemButton
-                  LinkComponent={Link}
-                  href={"/about"}
-                  sx={linkButtonStyle}
-                >
+                <ListItemButton sx={linkButtonStyle}>
                   <Stack spacing={2} direction="row">
                     <Email />
                     <Typography>cs.gaubongxuatkhau@gmail.com</Typography>
@@ -230,11 +214,7 @@ export function Footer() {
                 </ListItemButton>
               </ListItem>
               <ListItem>
-                <ListItemButton
-                  LinkComponent={Link}
-                  href={"/about"}
-                  sx={linkButtonStyle}
-                >
+                <ListItemButton sx={linkButtonStyle}>
                   <Stack spacing={2} direction="row">
                     <AccountBalance />
                     <Typography>
@@ -289,7 +269,7 @@ export function Footer() {
               <Twitter />
             </IconButton>
           </Stack>
-          <Typography>
+          <Typography fontSize="14px">
             {
               <>
                 {"Made with love by "}
