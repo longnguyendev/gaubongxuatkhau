@@ -297,7 +297,7 @@ export default function ShopPage() {
                 />
               </Grid>
             </Grid>
-            <Grid container spacing={4}>
+            <Grid container spacing={{ xs: 2, md: 3, lg: 4 }}>
               {productData?.pages.map((page) =>
                 page.products?.data.map((product) => (
                   <Grid key={product.id} item xs={6} md={3}>

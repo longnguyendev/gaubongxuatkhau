@@ -65,7 +65,7 @@ export default function ShopDetailPage() {
   return (
     <>
       <Container maxWidth="lg">
-        <Grid container spacing={{ md: 2, lg: 4 }} marginTop="150px">
+        <Grid container spacing={{ md: 2, lg: 4 }} marginY="40px">
           <Grid item xs={12} md={6}>
             <Box
               component="img"
@@ -195,7 +195,12 @@ export default function ShopDetailPage() {
                 <FavoriteBorder color="info" />
               </IconButton>
             </Stack>
-            <Stack direction="row" spacing={1} alignItems="center">
+            <Stack
+              direction="row"
+              spacing={1}
+              alignItems="center"
+              sx={{ flexFlow: "wrap" }}
+            >
               <Typography
                 sx={{
                   fontSize: "13px",
@@ -203,28 +208,31 @@ export default function ShopDetailPage() {
                   color: "#333333",
                 }}
               >
-                {"Danh mục:"}
+                Danh mục:
               </Typography>
-
-              {data?.products?.data?.[0]?.attributes?.product_categories?.data.map(
-                (category) => (
-                  <Chip
-                    component={Link}
-                    href={`/shop?category=${category.attributes?.slug}`}
-                    key={category.id}
-                    label={category.attributes?.name}
-                    size="small"
-                    clickable
-                    sx={{
-                      height: "auto",
-                      "& .MuiChip-label": {
-                        display: "block",
-                        whiteSpace: "normal",
-                      },
-                    }}
-                  />
-                )
-              )}
+              <Box
+                component="ul"
+                sx={{
+                  listStyle: "none",
+                  display: "flex",
+                  flexDirection: "row",
+                  flexFlow: "wrap",
+                }}
+              >
+                {data?.products?.data?.[0]?.attributes?.product_categories?.data.map(
+                  (category) => (
+                    <Box component="li" key={category.id} margin="2px">
+                      <Chip
+                        component={Link}
+                        href={`/shop?category=${category.attributes?.slug}`}
+                        label={category.attributes?.name}
+                        size="small"
+                        clickable
+                      />
+                    </Box>
+                  )
+                )}
+              </Box>
             </Stack>
           </Grid>
         </Grid>

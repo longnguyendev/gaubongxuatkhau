@@ -66,7 +66,12 @@ export default function Home() {
         </Box>
         <Box padding="80px 0">
           <Box sx={{ textAlign: "center" }}>
-            <Grid container spacing={4} marginTop="50px" marginBottom="100px">
+            <Grid
+              container
+              spacing={{ xs: 2, md: 3, lg: 4 }}
+              marginTop="50px"
+              marginBottom="100px"
+            >
               {products?.products?.data.map((product) => (
                 <Grid key={product.id} item xs={6} sm={4} md={3}>
                   <ProductCard
