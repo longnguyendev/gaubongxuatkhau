@@ -40,7 +40,7 @@ export default function Home() {
         />
         <meta
           name="keywords"
-          content="gấu bông, gấu bông giá sỉ, gấu bông giá rẽ, xưởng gấu bông, teddy, teddy bear, thú bông, đại lý gấu bông"
+          content="gấu bông, gấu bông giá sỉ, gấu bông giá rẽ, xưởng gấu bông, teddy, teddy bear, thú bông, đại lý gấu bông, quà tặng gấu bông"
         />
         <meta name="robots" content="index, follow" />
         {/* <base href="http://localhost:3000" /> */}
