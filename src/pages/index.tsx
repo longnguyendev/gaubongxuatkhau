@@ -55,7 +55,7 @@ export default function Home() {
             fontSize="64px"
             sx={{ textAlign: "center", marginBottom: "20px" }}
           >
-            {"You'll ❤ This hehehe"}
+            {"You'll ❤ This"}
           </Typography>
           <Typography fontSize="1.25rem" textAlign="center" color="#575757">
             We’ve picked few pieces we’re pretty sure you’ll love
