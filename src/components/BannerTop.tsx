@@ -72,7 +72,7 @@ export function BannerTop() {
           position="relative"
           textAlign="center"
         >
-          Connecting Heart Long hihih
+          Connecting Heart
         </Typography>
         <Typography
           sx={{
