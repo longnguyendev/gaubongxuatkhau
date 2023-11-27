@@ -41,6 +41,7 @@ export default function BlogPage() {
   const { data: dataBlogs, fetchNextPage } = useInfiniteBlogsQuery(
     "pagination",
     {
+      sort: "createdAt:desc",
       pagination: { page: 1, pageSize },
       ...(category && {
         filters: {
