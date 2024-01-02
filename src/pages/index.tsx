@@ -24,6 +24,7 @@ export default function Home() {
   });
 
   const { data: blogsData } = useBlogsQuery({
+    sort: "createdAt:desc",
     pagination: {
       page: 1,
       pageSize: 3,
